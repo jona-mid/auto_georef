@@ -1,0 +1,174 @@
+2026-02-27 14:45:40,178 - INFO - Found 86 orthos with complete image sets
+2026-02-27 14:45:40,178 - INFO - Remaining to process: 86
+2026-02-27 14:45:40,179 - INFO - Running with 8 worker(s)
+2026-02-27 14:46:38,968 - INFO - [10/86] done (throughput=0.17 imgs/s)
+2026-02-27 14:46:38,978 - INFO - Progress saved to georef_classification_results_qwen3.5_122b_a10b.csv (10 entries)
+2026-02-27 14:50:09,851 - INFO - Found 86 orthos with complete image sets
+2026-02-27 14:50:09,851 - INFO - Remaining to process: 86
+2026-02-27 14:50:09,851 - INFO - Running with 8 worker(s)
+2026-02-27 14:50:51,211 - INFO - [10/86] done (throughput=0.24 imgs/s)
+2026-02-27 14:50:51,229 - INFO - Progress saved to georef_result_gpt_5_mini (10 entries)
+2026-02-27 14:51:11,136 - INFO - [20/86] done (throughput=0.33 imgs/s)
+2026-02-27 14:51:11,141 - INFO - Progress saved to georef_result_gpt_5_mini (20 entries)
+2026-02-27 14:51:43,727 - INFO - [30/86] done (throughput=0.32 imgs/s)
+2026-02-27 14:51:43,732 - INFO - Progress saved to georef_result_gpt_5_mini (30 entries)
+2026-02-27 14:52:10,209 - INFO - [40/86] done (throughput=0.33 imgs/s)
+2026-02-27 14:52:10,214 - INFO - Progress saved to georef_result_gpt_5_mini (40 entries)
+2026-02-27 14:52:33,348 - INFO - [50/86] done (throughput=0.35 imgs/s)
+2026-02-27 14:52:33,353 - INFO - Progress saved to georef_result_gpt_5_mini (50 entries)
+2026-02-27 14:52:59,632 - INFO - [60/86] done (throughput=0.35 imgs/s)
+2026-02-27 14:52:59,637 - INFO - Progress saved to georef_result_gpt_5_mini (60 entries)
+2026-02-27 14:53:31,002 - INFO - [70/86] done (throughput=0.35 imgs/s)
+2026-02-27 14:53:31,005 - INFO - Progress saved to georef_result_gpt_5_mini (70 entries)
+2026-02-27 14:54:01,900 - INFO - [80/86] done (throughput=0.34 imgs/s)
+2026-02-27 14:54:01,904 - INFO - Progress saved to georef_result_gpt_5_mini (80 entries)
+2026-02-27 14:54:22,353 - INFO - [86/86] done (throughput=0.34 imgs/s)
+2026-02-27 14:54:22,358 - INFO - Progress saved to georef_result_gpt_5_mini (86 entries)
+2026-02-27 14:54:22,360 - INFO - Progress saved to georef_result_gpt_5_mini (86 entries)
+2026-02-27 14:54:22,360 - INFO - 
+Classification complete!
+2026-02-27 14:54:22,360 - INFO - Processed: 86 orthos
+2026-02-27 14:54:22,360 - INFO - Results saved to: georef_result_gpt_5_mini
+2026-02-27 15:01:24,275 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:01:24,276 - INFO - Remaining to process: 86
+2026-02-27 15:01:24,276 - INFO - Running with 8 worker(s)
+2026-02-27 15:02:37,174 - INFO - [10/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:02:37,182 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (10 entries)
+2026-02-27 15:03:25,696 - INFO - [20/86] done (throughput=0.16 imgs/s)
+2026-02-27 15:03:25,700 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (20 entries)
+2026-02-27 15:05:05,020 - INFO - [30/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:05:05,023 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (30 entries)
+2026-02-27 15:06:12,176 - INFO - [40/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:06:12,180 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (40 entries)
+2026-02-27 15:07:30,457 - INFO - [50/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:07:30,459 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (50 entries)
+2026-02-27 15:08:42,535 - ERROR - Request error (attempt 1): Response ended prematurely
+2026-02-27 15:08:48,188 - INFO - [60/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:08:48,193 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (60 entries)
+2026-02-27 15:09:55,637 - INFO - [70/86] done (throughput=0.14 imgs/s)
+2026-02-27 15:09:55,640 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (70 entries)
+2026-02-27 15:10:57,038 - ERROR - Request error (attempt 1): Response ended prematurely
+2026-02-27 15:11:33,442 - INFO - [80/86] done (throughput=0.13 imgs/s)
+2026-02-27 15:11:33,446 - INFO - Progress saved to georef_results_qwen3.5_122b_a10b.csv (80 entries)
+2026-02-27 15:23:05,741 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:23:05,741 - INFO - Remaining to process: 86
+2026-02-27 15:23:05,742 - INFO - Running with 8 worker(s)
+2026-02-27 15:23:33,070 - INFO - [10/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:23:33,078 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (10 entries)
+2026-02-27 15:23:36,534 - ERROR - API error: 503 - {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"Deadline expired before operation could complete.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","provider_name":"Google AI Studio","is_byok":false}},"user_id":"user_2tndytrnkK5PvaHA0YeJdyO1n9T"}
+2026-02-27 15:23:49,534 - INFO - [20/86] done (throughput=0.46 imgs/s)
+2026-02-27 15:23:49,538 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (20 entries)
+2026-02-27 15:23:50,286 - ERROR - API error: 503 - {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"Deadline expired before operation could complete.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","provider_name":"Google AI Studio","is_byok":false}},"user_id":"user_2tndytrnkK5PvaHA0YeJdyO1n9T"}
+2026-02-27 15:24:14,913 - INFO - [30/86] done (throughput=0.43 imgs/s)
+2026-02-27 15:24:14,917 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (30 entries)
+2026-02-27 15:24:17,821 - ERROR - API error: 503 - {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"Deadline expired before operation could complete.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","provider_name":"Google AI Studio","is_byok":false}},"user_id":"user_2tndytrnkK5PvaHA0YeJdyO1n9T"}
+2026-02-27 15:24:37,649 - INFO - [40/86] done (throughput=0.44 imgs/s)
+2026-02-27 15:24:37,652 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (40 entries)
+2026-02-27 15:25:03,944 - INFO - [50/86] done (throughput=0.42 imgs/s)
+2026-02-27 15:25:03,947 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (50 entries)
+2026-02-27 15:25:45,869 - INFO - [60/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:25:45,872 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (60 entries)
+2026-02-27 15:26:16,992 - INFO - [70/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:26:16,995 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (70 entries)
+2026-02-27 15:26:23,078 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:24,395 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:26,711 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:27,694 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:29,163 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:31,652 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:32,839 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:34,567 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:34,691 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:34,741 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:35,997 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:36,559 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:36,797 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:36,994 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:37,955 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:38,466 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:38,600 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:38,951 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:38,954 - INFO - [80/86] done (throughput=0.38 imgs/s)
+2026-02-27 15:26:38,982 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (80 entries)
+2026-02-27 15:26:39,189 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:40,985 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:41,417 - ERROR - API error: 403 - {"error":{"message":"Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys","code":403}}
+2026-02-27 15:26:57,000 - INFO - [86/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:26:57,005 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (86 entries)
+2026-02-27 15:26:57,007 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (86 entries)
+2026-02-27 15:26:57,007 - INFO - 
+Classification complete!
+2026-02-27 15:26:57,007 - INFO - Processed: 86 orthos
+2026-02-27 15:26:57,007 - INFO - Results saved to: georef_results_gemini_3.1_pro.csv
+2026-02-27 15:27:04,508 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:27:04,508 - INFO - Remaining to process: 86
+2026-02-27 15:27:04,508 - INFO - Running with 8 worker(s)
+2026-02-27 15:28:59,157 - ERROR - No API key provided. Use --api-key or set OPENROUTER_API_KEY
+2026-02-27 15:29:20,953 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:29:20,953 - INFO - Remaining to process: 86
+2026-02-27 15:29:20,953 - INFO - Running with 8 worker(s)
+2026-02-27 15:30:11,471 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:30:11,471 - INFO - Remaining to process: 86
+2026-02-27 15:30:11,472 - INFO - Running with 8 worker(s)
+2026-02-27 15:30:49,265 - INFO - [10/86] done (throughput=0.26 imgs/s)
+2026-02-27 15:30:49,271 - INFO - Progress saved to georef_results_gpt_5.2.csv (10 entries)
+2026-02-27 15:31:06,820 - INFO - [20/86] done (throughput=0.36 imgs/s)
+2026-02-27 15:31:06,822 - INFO - Progress saved to georef_results_gpt_5.2.csv (20 entries)
+2026-02-27 15:31:32,176 - INFO - [30/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:31:32,179 - INFO - Progress saved to georef_results_gpt_5.2.csv (30 entries)
+2026-02-27 15:32:00,283 - INFO - [40/86] done (throughput=0.37 imgs/s)
+2026-02-27 15:32:00,285 - INFO - Progress saved to georef_results_gpt_5.2.csv (40 entries)
+2026-02-27 15:32:28,509 - INFO - [50/86] done (throughput=0.36 imgs/s)
+2026-02-27 15:32:28,513 - INFO - Progress saved to georef_results_gpt_5.2.csv (50 entries)
+2026-02-27 15:32:45,258 - INFO - [60/86] done (throughput=0.39 imgs/s)
+2026-02-27 15:32:45,261 - INFO - Progress saved to georef_results_gpt_5.2.csv (60 entries)
+2026-02-27 15:33:09,969 - INFO - [70/86] done (throughput=0.39 imgs/s)
+2026-02-27 15:33:09,973 - INFO - Progress saved to georef_results_gpt_5.2.csv (70 entries)
+2026-02-27 15:33:39,665 - INFO - [80/86] done (throughput=0.38 imgs/s)
+2026-02-27 15:33:39,669 - INFO - Progress saved to georef_results_gpt_5.2.csv (80 entries)
+2026-02-27 15:33:43,050 - INFO - [86/86] done (throughput=0.41 imgs/s)
+2026-02-27 15:33:43,056 - INFO - Progress saved to georef_results_gpt_5.2.csv (86 entries)
+2026-02-27 15:33:43,058 - INFO - Progress saved to georef_results_gpt_5.2.csv (86 entries)
+2026-02-27 15:33:43,059 - INFO - 
+Classification complete!
+2026-02-27 15:33:43,059 - INFO - Processed: 86 orthos
+2026-02-27 15:33:43,059 - INFO - Results saved to: georef_results_gpt_5.2.csv
+2026-02-27 15:35:06,345 - ERROR - Data directory not found: ./data
+2026-02-27 15:35:18,662 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:35:18,666 - INFO - Loaded 86 existing results from georef_results_gemini_3.1_pro.csv
+2026-02-27 15:35:18,669 - INFO - Rerun requested for statuses: {'ERROR'}
+2026-02-27 15:35:18,670 - INFO - Re-adding 7 orthos for processing
+2026-02-27 15:35:18,670 - INFO - Remaining to process: 0
+2026-02-27 15:35:18,670 - INFO - Nothing to do.
+2026-02-27 15:37:39,381 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:37:39,386 - INFO - Loaded 86 existing results from georef_results_gemini_3.1_pro.csv
+2026-02-27 15:37:39,387 - INFO - Rerun requested for statuses: {'ERROR'}
+2026-02-27 15:37:39,388 - INFO - Re-adding 7 orthos for processing
+2026-02-27 15:37:39,388 - INFO - Remaining to process: 7
+2026-02-27 15:37:39,388 - INFO - Running with 1 worker(s)
+2026-02-27 15:37:39,388 - INFO - [1/7] Processing ortho 7720...
+2026-02-27 15:37:52,892 - INFO -   -> CORRECT: INCORRECT: The roads, water paths, and large building structures in the drone overlay are significan
+2026-02-27 15:37:53,893 - INFO - [2/7] Processing ortho 7739...
+2026-02-27 15:38:03,471 - ERROR - API error: 503 - {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"Deadline expired before operation could complete.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","provider_name":"Google AI Studio","is_byok":false}},"user_id":"user_2tndytrnkK5PvaHA0YeJdyO1n9T"}
+2026-02-27 15:38:17,415 - INFO -   -> CORRECT: CORRECT: The roads, buildings, and terrain features in the drone imagery align exactly
+2026-02-27 15:38:18,416 - INFO - [3/7] Processing ortho 7893...
+2026-02-27 15:38:31,907 - INFO -   -> CORRECT: INCORRECT: The drone imagery is visibly shifted, as evidenced by the misalignment of the
+2026-02-27 15:38:32,909 - INFO - [4/7] Processing ortho 809...
+2026-02-27 15:38:45,877 - INFO -   -> CORRECT: CORRECT: The topographical features, specifically the winding dirt roads in the high-resolution dron
+2026-02-27 15:38:46,878 - INFO - [5/7] Processing ortho 824...
+2026-02-27 15:38:59,279 - INFO -   -> CORRECT: CORRECT: The drone imagery seamlessly aligns with the underlying satellite basemap and street roads 
+2026-02-27 15:39:00,280 - INFO - [6/7] Processing ortho 846...
+2026-02-27 15:39:18,902 - INFO -   -> UNCERTAIN: No response received
+2026-02-27 15:39:19,903 - INFO - [7/7] Processing ortho 974...
+2026-02-27 15:39:41,275 - INFO -   -> CORRECT: INCORRECT: The paved road visible on the streets basemap in the upper right does
+2026-02-27 15:39:41,281 - INFO - Progress saved to georef_results_gemini_3.1_pro.csv (86 entries)
+2026-02-27 15:39:41,281 - INFO - 
+Classification complete!
+2026-02-27 15:39:41,282 - INFO - Processed: 7 orthos
+2026-02-27 15:39:41,282 - INFO - Results saved to: georef_results_gemini_3.1_pro.csv
+2026-02-27 15:39:52,004 - INFO - Found 86 orthos with complete image sets
+2026-02-27 15:39:52,030 - INFO - Loaded 86 existing results from georef_results_gemini_3.1_pro.csv
+2026-02-27 15:39:52,032 - INFO - Rerun requested for statuses: {'ERROR'}
+2026-02-27 15:39:52,032 - INFO - Re-adding 0 orthos for processing
+2026-02-27 15:39:52,033 - INFO - Remaining to process: 0
+2026-02-27 15:39:52,033 - INFO - Nothing to do.

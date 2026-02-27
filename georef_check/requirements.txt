@@ -1,0 +1,17 @@
+rasterio
+opencv-python
+scikit-image
+numpy
+pandas
+xgboost
+scikit-learn
+requests
+Pillow
+tqdm
+pyyaml
+playwright
+torch
+torchvision
+git+https://github.com/cvg/LightGlue.git
+# Optional: faster Hugging Face downloads (pip install hf_xet)
+# On Windows, symlink warning is disabled in code (HF_HUB_DISABLE_SYMLINKS_WARNING=1)

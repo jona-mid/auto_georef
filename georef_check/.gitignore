@@ -1,0 +1,25 @@
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+*.log
+*.tmp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+
+# Virtual environments (keep .venv-windows locally but don't commit)
+.venv/
+.venv-uv/
+.venv-windows/
+env/
+venv/
+
+# Processed / derived data (regenerable)
+data/processed/
+

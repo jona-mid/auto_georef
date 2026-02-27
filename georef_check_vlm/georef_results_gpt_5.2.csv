@@ -1,0 +1,87 @@
+﻿ortho_id,classification,explanation
+1545,CORRECT,"CORRECT: The drone ortho matches the satellite imagery well (field boundaries, tree line/creek corridor, and farm tracks align with no noticeable shift)."
+1721,CORRECT,CORRECT: The drone orthomosaic’s vertical and horizontal road intersection aligns well with both the streets basemap centerlines and the corresponding roads visible in the underlying satellite imagery.
+1541,UNCERTAIN,UNCERTAIN: The area is uniformly forested with no distinct roads/buildings visible in the drone mosaic to reliably check alignment against the streets or satellite basemap.
+1339,CORRECT,CORRECT: The visible shoreline and the internal road/track in the drone ortho generally line up with both the streets basemap and the satellite background without an obvious systematic shift.
+148,CORRECT,CORRECT: The visible track/clearing at the bottom of the drone orthomosaic lines up with the corresponding road/clearing in the underlying satellite imagery with no obvious lateral shift.
+1335,CORRECT,"CORRECT: The prominent road at the top-right edge of the drone ortho aligns well with the B102/visible road in both the streets and satellite basemaps, with no obvious systematic shift."
+1638,UNCERTAIN,No response received
+1336,UNCERTAIN,No response received
+1768,CORRECT,"CORRECT: The dirt road/tracks and clearings visible in the drone orthomosaic line up closely with the same features in the underlying satellite imagery, showing no obvious systematic shift."
+1789,CORRECT,"CORRECT: The drone ortho aligns well with the underlying satellite features (pond edges, tree line, and field boundaries) with no noticeable systematic shift."
+2126,UNCERTAIN,"UNCERTAIN: The drone mosaic covers only uniform forest canopy with no clearly shared roads/buildings/landmarks against the basemap, making alignment impossible to verify from these views."
+2033,CORRECT,INCORRECT: The drone orthomosaic is noticeably shifted relative to both the street and satellite basemaps (roads/stream and building clusters do not line up in the overlay).
+2261,CORRECT,"CORRECT: The drone ortho aligns well with the satellite basemap, with the forest edge and field boundaries matching in shape and position without a noticeable lateral shift."
+2356,UNCERTAIN,"UNCERTAIN: The drone imagery covers a narrow strip with no clearly identifiable roads/buildings to compare, so alignment against the streets and satellite basemaps can’t be confidently assessed."
+2479,UNCERTAIN,"UNCERTAIN: The area shown is nearly all homogeneous forest with no clear roads/buildings in either basemap to use as control points, so alignment can’t be reliably assessed."
+2483,CORRECT,"INCORRECT: The drone strip does not line up with the river/terrain features in either the streets or satellite basemap, appearing noticeably shifted/rotated relative to the underlying geography."
+233,CORRECT,"INCORRECT: In the satellite overlay view, distinctive rock/snow patterns inside the drone-image rectangle do not line up with the same terrain features on the underlying satellite imagery, indicating a noticeable positional mismatch."
+1889,UNCERTAIN,No response received
+203,UNCERTAIN,No response received
+2496,UNCERTAIN,"UNCERTAIN: The drone strip shows mostly uniform vegetation with no clear roads/buildings overlapping the basemap features, so alignment cannot be confidently verified."
+3098,CORRECT,"CORRECT: The river corridor and adjacent clearings/field edges in the drone ortho align closely with the same features in the underlying satellite imagery, showing no obvious systematic shift."
+3214,UNCERTAIN,"UNCERTAIN: The drone orthomosaic covers mostly uniform forest canopy with no distinct roads/buildings inside the footprint, so there aren’t enough fixed features to reliably judge alignment against the streets/satellite basemaps."
+3729,CORRECT,"CORRECT: The drone orthomosaic matches the underlying satellite patterns and the basemap road/building locations (notably the roads and campus buildings on the right), with no obvious shift or rotation."
+3640,CORRECT,"CORRECT: The drone ortho aligns well with the underlying satellite/street basemap features (field edges, roads, and building areas match without a noticeable consistent shift)."
+368,CORRECT,CORRECT: The winding access road and the runway-side clearing in the drone orthomosaic line up with the same features on both the streets basemap and the satellite imagery without a noticeable shift.
+282,UNCERTAIN,No response received
+3118,UNCERTAIN,No response received
+3765,UNCERTAIN,UNCERTAIN: The area is uniform forest canopy with no visible roads/buildings or distinct reference features in the basemaps to verify whether the drone orthomosaic is shifted or aligned.
+3757,UNCERTAIN,No response received
+3797,CORRECT,CORRECT: The main diagonal road and the junction/branching tracks in the drone orthomosaic line up well with the corresponding road positions on both the streets and satellite basemaps.
+3922,CORRECT,"CORRECT: The visible road/track clearings at the southern edge of the drone orthomosaic line up well with the same features in the underlying satellite and street basemaps, with no obvious systematic shift."
+4530,UNCERTAIN,UNCERTAIN: The streets basemap shows virtually no mappable features and the satellite imagery is too low-resolution/blurry to confidently verify whether the drone ortho matches underlying roads or clearings.
+3851,CORRECT,"INCORRECT: The drone orthomosaic is visibly shifted relative to the basemap, with trails/clearings in the drone image not lining up with the mapped paths and features on the streets/satellite layers."
+411,CORRECT,"CORRECT: The roads and settlement features (building clusters and the main curving road at the valley bottom) line up consistently between the drone overlay and both the streets and satellite basemaps, with no obvious lateral shift."
+3947,UNCERTAIN,No response received
+4652,UNCERTAIN,No response received
+5091,CORRECT,"INCORRECT: The river/water features in the drone ortho do not line up with the basemap river polygon (orientation/position mismatch), indicating a noticeable georeferencing shift."
+4985,UNCERTAIN,No response received
+5088,CORRECT,"INCORRECT: The river/shoreline in the drone orthomosaic does not line up with the river position on the basemap/satellite (appears laterally shifted), indicating misregistration."
+4784,UNCERTAIN,No response received
+4829,UNCERTAIN,No response received
+5303,UNCERTAIN,"UNCERTAIN: The basemaps shown (streets and low-resolution satellite) lack clear matching features like distinct roads/buildings, so alignment of the drone imagery cannot be confidently verified."
+5227,CORRECT,"CORRECT: The drone orthomosaic sits consistently east of Bristow Road (SR 619) without crossing the mapped road, and its surrounding treeline/clearing footprint aligns plausibly with the underlying basemap context."
+5174,CORRECT,"INCORRECT: The drone orthomosaic is noticeably shifted relative to both the streets and satellite basemaps, with key features like Gorham Road and nearby buildings/parking areas not lining up."
+5243,CORRECT,CORRECT: The drone orthomosaic’s buildings and cleared compound at the eastern edge line up with the corresponding structures in both the street basemap footprints and the underlying satellite imagery without an obvious systematic shift.
+5092,UNCERTAIN,No response received
+5572,UNCERTAIN,UNCERTAIN: The drone orthomosaic covers mostly uniform forest canopy with no clear roads/buildings inside the footprint to confidently verify alignment against the streets or satellite basemap.
+559,CORRECT,"CORRECT: The visible track/road and the field/forest boundary in the drone orthomosaic line up well with the same features in both the streets and satellite basemaps, with no obvious consistent shift."
+5782,CORRECT,"CORRECT: Distinct features in the drone ortho (the central dirt track, the lone tree with its shadow, and the surrounding clearing/tree line) visually line up well with the same features in the underlying satellite imagery, with no obvious horizontal/vertical shift."
+608,CORRECT,CORRECT: The visible dirt roads/tracks in the drone orthomosaic (notably the bottom-right road and the top-left junction) line up well with the corresponding roads in both the streets and satellite basemaps without a noticeable shift.
+5778,UNCERTAIN,No response received
+5496,UNCERTAIN,No response received
+621,CORRECT,CORRECT: The main road (Kusenwaldweg) and the visible clearings/tracks in the drone orthomosaic line up well with both the streets basemap and the underlying satellite imagery without a noticeable shift.
+5739,UNCERTAIN,No response received
+6019,UNCERTAIN,No response received
+6384,UNCERTAIN,"UNCERTAIN: The streets and satellite basemaps show no visible roads/buildings/features beneath the drone ortho in these screenshots, so alignment can’t be reliably assessed."
+5839,UNCERTAIN,No response received
+6244,CORRECT,CORRECT: The drone orthomosaic’s river bends and the major rail/road crossings (including the diagonal bridge at the bottom right and the north–south corridor) line up well with both the streets and satellite basemaps.
+6312,CORRECT,CORRECT: The drone orthomosaic’s river bends and the road/rail corridors (including the bridge area) line up closely with the streets and satellite basemap features with no obvious systematic shift.
+6386,UNCERTAIN,"UNCERTAIN: The underlying streets and satellite basemaps show no clearly visible roads or landmarks at this view/zoom, so there are no reference features to verify the drone imagery alignment."
+6400,CORRECT,CORRECT: The main roads/rail corridor and the river/canal edges in the drone orthomosaic line up closely with both the streets basemap and the underlying satellite imagery without a noticeable shift.
+6779,CORRECT,"INCORRECT: The drone orthomosaic shows roads/buildings and a landscaped area, but the underlying satellite basemap is just an empty field texture with no matching features, indicating a major positional misalignment."
+6367,CORRECT,INCORRECT: The drone ortho does not line up with the satellite basemap—forest edges and linear clearings/
+6929,CORRECT,"INCORRECT: The drone orthomosaic shows a rocky coastline and beach while the underlying satellite/basemap at that position is inland farmland and roads, indicating a major location shift/mismatch."
+6924,CORRECT,"INCORRECT: The drone orthomosaic shows rocky shoreline and open water, but the underlying basemap/satellite imagery at that location is continuous forest and fields, indicating a major positional mismatch."
+6731,CORRECT,"CORRECT: The drone orthomosaic’s roads and building footprints (e.g., the driveway and the large building/parking area by North 40th St) line up consistently with both the streets basemap and the underlying satellite imagery without a noticeable shift."
+6322,UNCERTAIN,No response received
+6458,CORRECT,CORRECT: The main dirt roads/tracks (notably the curved road and junction at the lower right and the track near the top) line up well between the drone orthomosaic and both the street and satellite basemaps with no obvious systematic shift.
+7236,UNCERTAIN,"UNCERTAIN: The basemap/satellite background shows no distinct roads or structures at this location, so there aren’t enough common features to confirm whether the drone ortho is properly aligned or shifted."
+6936,CORRECT,"INCORRECT: The overlaid drone orthos do not line up with the basemap/satellite features (e.g., the visible dirt/road corridors and field edges underneath do not coincide with the roads/tracks shown in the drone imagery, indicating a shift/rotation)."
+70,UNCERTAIN,"UNCERTAIN: The area is mostly homogeneous forest with few distinct reference features, and the only visible road segment near the bottom-left does not clearly coincide with the mapped road line enough to confirm alignment."
+6957,CORRECT,"CORRECT: The drone orthomosaic aligns well with both the streets basemap and the underlying satellite imagery, with roads and building footprints matching without a noticeable shift."
+7415,CORRECT,"CORRECT: The main diagonal and north–south roads plus the lake/settlement features in the drone orthomosaic line up well with both the streets and satellite basemaps, with no noticeable shift."
+7244,CORRECT,"CORRECT: The roads and the main intersection in the drone orthomosaic align closely with the same features on both the streets basemap and the underlying satellite imagery, with no obvious systematic shift."
+7374,CORRECT,"INCORRECT: The river/stream in the drone ortho does not line up with the basemap waterway (it appears offset to the west, with the mapped blue line falling outside the channel seen in the drone image)."
+7479,CORRECT,"CORRECT: The drone orthomosaic’s shoreline, main coastal road, and prominent features (e.g., the rectangular sports field and nearby built-up blocks) align well with both the streets and satellite basemaps without a noticeable shift."
+755,UNCERTAIN,"UNCERTAIN: The drone imagery overlay is not clearly visible/distinguishable from the basemap in the provided views, so alignment cannot be reliably assessed."
+765,CORRECT,"CORRECT: The plantation row patterns and clearings in the drone ortho match seamlessly with the surrounding satellite imagery at the footprint edges, with no noticeable shift relative to the mapped road corridor nearby."
+7700,CORRECT,"CORRECT: In the satellite comparison, the drone ortho’s canal, main roads, and building blocks line up closely with the underlying satellite imagery with no obvious systematic shift or rotation."
+974,UNCERTAIN,UNCERTAIN: The drone mosaic is too opaque over the streets layer and the satellite basemap is too low-resolution here to reliably verify feature-by-feature alignment.
+7739,CORRECT,"CORRECT: Major roads and the dense building blocks in the drone orthomosaic line up well with the streets and underlying satellite imagery, with no obvious systematic shift."
+824,CORRECT,"CORRECT: The visible dirt tracks/roads and terrain features in the drone orthomosaic line up well with the satellite imagery and the mapped road/trail lines, with no obvious consistent shift."
+7893,CORRECT,"CORRECT: Roads, parking-lot edges, and major buildings in the drone orthomosaic line up with the same features on both the streets and satellite basemaps, with no consistent lateral shift apparent."
+809,CORRECT,CORRECT: The main dirt road and branching tracks in the drone ortho line up with the same road network and terrain features visible in both the streets basemap and the underlying satellite imagery without a noticeable shift.
+7720,UNCERTAIN,No response received
+846,UNCERTAIN,UNCERTAIN: The area is mostly homogeneous vegetation with no clear roads/buildings or other sharp features visible across layers to confidently verify alignment.

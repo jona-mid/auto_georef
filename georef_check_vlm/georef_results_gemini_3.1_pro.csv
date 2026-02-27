@@ -1,0 +1,87 @@
+﻿ortho_id,classification,explanation
+1638,CORRECT,"INCORRECT: The roads, buildings, and water features in the drone imagery are"
+1339,CORRECT,CORRECT: The clearly visible road and shoreline features in the drone imagery accurately align with
+1545,CORRECT,"INCORRECT: The key features in the drone imagery, such as the dirt paths and field boundaries"
+1721,CORRECT,CORRECT: The roads visible in the drone imagery align perfectly with the dashed road lines on
+148,UNCERTAIN,satellite.png`) vs Image 4 (`satellite_only.png`):**
+1336,CORRECT,INCORRECT: The prominent pond visible in the upper-middle section of the drone imagery is
+1541,UNCERTAIN,"UNCERTAIN: The drone imagery consists entirely of dense, continuous forest canopy without distinct roads"
+1335,CORRECT,CORRECT: The paths and edges visible in the drone imagery align seamlessly with the corresponding roads and tracks
+203,CORRECT,"CORRECT: The roads, paths, and forest boundaries visible in the drone imagery align perfectly with both"
+2033,CORRECT,"INCORRECT: The roads, buildings, and field boundaries visible in the drone imagery"
+1889,UNCERTAIN,No response received
+2126,UNCERTAIN,"UNCERTAIN: The drone imagery consists entirely of dense, featureless forest canopy without visible roads,"
+1789,CORRECT,INCORRECT: The drone imagery is significantly misaligned with both the street lines and underlying
+2261,CORRECT,"INCORRECT: The drone imagery is visibly shifted, as evidenced by the misalignment of"
+233,CORRECT,INCORRECT: The rocky ridges and snow patches in the drone imagery do not align smoothly with
+2356,CORRECT,"CORRECT: The natural features such as vegetation boundaries, clearings, and variations in land cover within"
+282,CORRECT,"CORRECT: The tree lines, field boundaries, and internal paths in the drone imagery"
+2483,CORRECT,INCORRECT: The river visible within the drone imagery strip does not align with the
+2496,CORRECT,INCORRECT: The path visible on the left side of the drone imagery is significantly shifted away from
+3098,UNCERTAIN,No response received
+2479,UNCERTAIN,"UNCERTAIN: The images only show dense uniform forest without distinct features like roads or buildings, making"
+3118,CORRECT,INCORRECT: The drone imagery is visibly shifted to the east relative to the underlying
+368,CORRECT,CORRECT: The prominent winding road and other landscape features in the drone imagery align perfectly with the identical
+3640,CORRECT,"INCORRECT: The roads, buildings, and field boundaries in the drone imagery clearly"
+3729,CORRECT,"CORRECT: The field boundaries, forest edges, and diagonal path through the woods in the drone"
+3757,CORRECT,"INCORRECT: The roads, river, and field boundaries in the drone imagery are significantly"
+3797,CORRECT,CORRECT: The distinctive dirt road network visible in the drone imagery aligns precisely with the corresponding dashed
+3851,CORRECT,INCORRECT: The drone imagery is significantly shifted to the right and slightly up compared to the
+3922,CORRECT,INCORRECT: The roads and wind turbine clearings visible in the drone imagery do not align with
+3947,CORRECT,CORRECT: The east-west dirt road visible in the drone imagery aligns perfectly with both
+411,CORRECT,INCORRECT: The roads and river features in the drone imagery are visibly shifted southwards and mis
+4530,UNCERTAIN,UNCERTAIN: It is impossible to confidently determine alignment because the underlying satellite basemap is too blurry
+4652,CORRECT,CORRECT: The road running along the left side and the meandering river on the right side of the
+3214,CORRECT,INCORRECT: The distinguishable dirt path or clearing visible in the top-right quadrant of the
+4829,CORRECT,INCORRECT: The drone imagery is significantly misaligned with both the underlying streets basemap
+3765,UNCERTAIN,UNCERTAIN: there are no distinct features like roads or buildings to use as reference
+5088,CORRECT,"INCORRECT: The drone imagery is misaligned, as the riverbank in the drone image does"
+4985,CORRECT,"INCORRECT: The drone imagery is heavily distorted and clearly misaligned, as the"
+1768,CORRECT,INCORRECT: The prominent dirt road running through the drone imagery is clearly shifted to the west
+5091,CORRECT,"CORRECT: The drone imagery perfectly aligns with the satellite basemap river bends and landforms,"
+5092,CORRECT,"INCORRECT: The drone imagery is significantly shifted relative to the underlying satellite basemap, as evidenced"
+5243,CORRECT,INCORRECT: The buildings in the drone imagery are shifted significantly to the left compared to their corresponding
+5227,CORRECT,CORRECT: The edges of the tree lines and the general shape of the cleared area in the drone
+5303,UNCERTAIN,UNCERTAIN: Neither the blank streets basemap nor the excessively pixelated satellite basemap provide
+5174,CORRECT,INCORRECT: The roads and buildings in the drone imagery are visibly shifted to the northeast
+5496,CORRECT,"CORRECT: The visible features in the drone imagery, such as the prominent road in the bottom left"
+4784,CORRECT,"INCORRECT: The drone imagery is distinctly shifted southeast compared to the underlying satellite basemap features,"
+5778,CORRECT,"INCORRECT: The roads, trees, and ground features in the inner drone imagery"
+5572,UNCERTAIN,No response received
+5839,CORRECT,CORRECT: The linear features (dirt roads/trails) and patterns of tree clearings visible
+5739,UNCERTAIN,No response received
+608,UNCERTAIN,No response received
+6244,CORRECT,"CORRECT: The key features in the drone imagery, such as the winding river at the"
+6322,CORRECT,"INCORRECT: The drone imagery is shifted visibly north compared to the underlying basemap, as evidenced"
+559,CORRECT,INCORRECT: The paved path visible within the drone imagery is significantly shifted to the west
+6312,UNCERTAIN,No response received
+6019,UNCERTAIN,No response received
+5782,CORRECT,"CORRECT: The dirt trails, prominent trees, and overall terrain features in the drone"
+621,CORRECT,INCORRECT: The roads and clearings visible within the drone imagery are significantly shifted to the
+6386,UNCERTAIN,No response received
+6367,UNCERTAIN,"UNCERTAIN: While the drone imagery captures the general shape of the forest and paths, a definitive"
+6384,UNCERTAIN,UNCERTAIN: The provided basemaps lack any distinct features or detail in this area
+6400,CORRECT,"CORRECT: The roads, paths, and water bodies visible in the drone imagery perfectly align with both"
+6731,CORRECT,"CORRECT: The roads, buildings, and other features in the drone imagery align seamlessly"
+6779,UNCERTAIN,UNCERTAIN: There are no common features visible in either the blank streets basemap or the bare
+6458,CORRECT,CORRECT: The snow-covered roads and paths in the drone imagery align perfectly with the corresponding
+6957,UNCERTAIN,No response received
+6936,UNCERTAIN,No response received
+7236,UNCERTAIN,No response received
+7374,UNCERTAIN,No response received
+7244,UNCERTAIN,No response received
+7415,CORRECT,"INCORRECT: The roads, water body, and other distinctive features in the drone imagery are"
+765,CORRECT,CORRECT: The patterns of the tree lines and clearings in the drone imagery perfectly match the
+70,CORRECT,INCORRECT: The visible road segment in the bottom left corner of the drone imagery does not
+6924,UNCERTAIN,No response received
+6929,UNCERTAIN,No response received
+7700,UNCERTAIN,No response received
+7479,CORRECT,"CORRECT: The roads, buildings, and athletic field visible in the drone imagery perfectly align exactly"
+755,UNCERTAIN,No response received
+7720,CORRECT,"INCORRECT: The roads, water paths, and large building structures in the drone overlay are significantly"
+7739,CORRECT,"CORRECT: The roads, buildings, and terrain features in the drone imagery align exactly"
+7893,CORRECT,"INCORRECT: The drone imagery is visibly shifted, as evidenced by the misalignment of the"
+809,CORRECT,"CORRECT: The topographical features, specifically the winding dirt roads in the high-resolution drone"
+824,CORRECT,CORRECT: The drone imagery seamlessly aligns with the underlying satellite basemap and street roads without
+846,UNCERTAIN,No response received
+974,CORRECT,INCORRECT: The paved road visible on the streets basemap in the upper right does
