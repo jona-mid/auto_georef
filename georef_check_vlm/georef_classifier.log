@@ -172,3 +172,379 @@ Classification complete!
 2026-02-27 15:39:52,032 - INFO - Re-adding 0 orthos for processing
 2026-02-27 15:39:52,033 - INFO - Remaining to process: 0
 2026-02-27 15:39:52,033 - INFO - Nothing to do.
+2026-02-27 16:58:48,090 - ERROR - No API key provided. Use --api-key or set OPENROUTER_API_KEY
+2026-02-27 16:59:17,696 - INFO - Found 46 orthos with complete image sets
+2026-02-27 16:59:17,697 - INFO - Remaining to process: 46
+2026-02-27 16:59:17,697 - INFO - Running with 1 worker(s)
+2026-02-27 16:59:17,697 - INFO - [1/46] Processing ortho 1335...
+2026-02-27 16:59:21,482 - INFO -   -> CORRECT: CORRECT: The logging paths and the main road in the northeast corner of the drone imagery perfectly 
+2026-02-27 16:59:22,483 - INFO - [2/46] Processing ortho 1336...
+2026-02-27 16:59:37,713 - INFO - Found 46 orthos with complete image sets
+2026-02-27 16:59:37,713 - INFO - Remaining to process: 46
+2026-02-27 16:59:37,713 - INFO - Running with 10 worker(s)
+2026-02-27 16:59:45,271 - INFO - [10/46] done (throughput=1.32 imgs/s)
+2026-02-27 16:59:45,278 - INFO - Progress saved to georef_results_gemini_3_flash.csv (10 entries)
+2026-02-27 16:59:49,374 - INFO - [20/46] done (throughput=1.72 imgs/s)
+2026-02-27 16:59:49,377 - INFO - Progress saved to georef_results_gemini_3_flash.csv (20 entries)
+2026-02-27 16:59:53,236 - INFO - [30/46] done (throughput=1.93 imgs/s)
+2026-02-27 16:59:53,239 - INFO - Progress saved to georef_results_gemini_3_flash.csv (30 entries)
+2026-02-27 16:59:58,209 - INFO - [40/46] done (throughput=1.95 imgs/s)
+2026-02-27 16:59:58,211 - INFO - Progress saved to georef_results_gemini_3_flash.csv (40 entries)
+2026-02-27 17:00:01,309 - INFO - [46/46] done (throughput=1.95 imgs/s)
+2026-02-27 17:00:01,313 - INFO - Progress saved to georef_results_gemini_3_flash.csv (46 entries)
+2026-02-27 17:00:01,315 - INFO - Progress saved to georef_results_gemini_3_flash.csv (46 entries)
+2026-02-27 17:00:01,315 - INFO - 
+Classification complete!
+2026-02-27 17:00:01,315 - INFO - Processed: 46 orthos
+2026-02-27 17:00:01,315 - INFO - Results saved to: georef_results_gemini_3_flash.csv
+2026-02-27 17:00:29,465 - INFO - Found 46 orthos with complete image sets
+2026-02-27 17:00:29,465 - INFO - Remaining to process: 46
+2026-02-27 17:00:29,465 - INFO - Running with 10 worker(s)
+2026-02-27 17:01:06,912 - INFO - [10/46] done (throughput=0.27 imgs/s)
+2026-02-27 17:01:06,919 - INFO - Progress saved to georef_gpt_5_mini.csv (10 entries)
+2026-02-27 17:01:27,302 - INFO - [20/46] done (throughput=0.35 imgs/s)
+2026-02-27 17:01:27,305 - INFO - Progress saved to georef_gpt_5_mini.csv (20 entries)
+2026-02-27 17:01:47,381 - INFO - [30/46] done (throughput=0.39 imgs/s)
+2026-02-27 17:01:47,385 - INFO - Progress saved to georef_gpt_5_mini.csv (30 entries)
+2026-02-27 17:02:13,793 - INFO - [40/46] done (throughput=0.38 imgs/s)
+2026-02-27 17:02:13,796 - INFO - Progress saved to georef_gpt_5_mini.csv (40 entries)
+2026-02-27 17:02:27,157 - INFO - [46/46] done (throughput=0.39 imgs/s)
+2026-02-27 17:02:27,163 - INFO - Progress saved to georef_gpt_5_mini.csv (46 entries)
+2026-02-27 17:02:27,166 - INFO - Progress saved to georef_gpt_5_mini.csv (46 entries)
+2026-02-27 17:02:27,166 - INFO - 
+Classification complete!
+2026-02-27 17:02:27,166 - INFO - Processed: 46 orthos
+2026-02-27 17:02:27,167 - INFO - Results saved to: georef_gpt_5_mini.csv
+2026-02-27 17:03:18,618 - INFO - Found 46 orthos with complete image sets
+2026-02-27 17:03:18,618 - INFO - Remaining to process: 46
+2026-02-27 17:03:18,618 - INFO - Running with 10 worker(s)
+2026-02-27 17:03:49,962 - INFO - [10/46] done (throughput=0.32 imgs/s)
+2026-02-27 17:03:49,970 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (10 entries)
+2026-02-27 17:04:42,185 - INFO - [20/46] done (throughput=0.24 imgs/s)
+2026-02-27 17:04:42,188 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (20 entries)
+2026-02-27 17:05:32,713 - INFO - [30/46] done (throughput=0.22 imgs/s)
+2026-02-27 17:05:32,717 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (30 entries)
+2026-02-27 17:06:15,353 - INFO - [40/46] done (throughput=0.23 imgs/s)
+2026-02-27 17:06:15,356 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (40 entries)
+2026-02-27 17:07:58,858 - INFO - [46/46] done (throughput=0.16 imgs/s)
+2026-02-27 17:07:58,864 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (46 entries)
+2026-02-27 17:07:58,865 - INFO - Progress saved to georef_qwen3.5_35b_a3b.csv (46 entries)
+2026-02-27 17:07:58,866 - INFO - 
+Classification complete!
+2026-02-27 17:07:58,866 - INFO - Processed: 46 orthos
+2026-02-27 17:07:58,866 - INFO - Results saved to: georef_qwen3.5_35b_a3b.csv
+2026-02-27 17:08:18,565 - INFO - Found 46 orthos with complete image sets
+2026-02-27 17:08:18,566 - INFO - Remaining to process: 46
+2026-02-27 17:08:18,566 - INFO - Running with 10 worker(s)
+2026-02-27 17:08:19,967 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:20,563 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:20,626 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:21,011 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:21,550 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:21,598 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,120 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,133 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,338 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,353 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,635 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,746 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:22,769 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:23,056 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:23,716 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:23,845 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:23,851 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:24,063 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:24,487 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,031 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,109 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,315 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,393 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,900 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:25,961 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:26,042 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:26,574 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:27,025 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:27,298 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:27,545 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:27,720 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:27,778 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,019 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,231 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,369 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,450 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,562 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,568 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:28,688 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:29,202 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:29,974 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:30,370 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:30,497 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:30,581 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:30,630 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,068 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,369 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,422 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,477 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,772 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:31,779 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:32,417 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:32,708 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,210 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,307 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,401 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,462 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,487 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,599 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:33,612 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:34,321 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:34,561 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:34,637 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,145 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,258 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,429 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,432 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,583 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:35,774 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:36,956 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,126 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,166 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,427 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,449 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,493 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,510 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,638 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:37,836 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:38,320 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:38,798 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:38,951 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:39,395 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:39,438 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:39,883 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:39,969 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,067 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,127 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,151 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,152 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,911 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:40,997 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:41,015 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:41,707 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:41,951 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,267 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,306 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,483 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,529 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,814 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,818 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:42,827 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:43,089 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:43,147 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:43,447 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:44,236 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:44,523 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:44,554 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:44,908 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,125 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,322 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,541 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,566 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,572 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:45,586 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:46,366 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:46,654 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:46,722 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:47,159 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:47,800 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:47,863 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,072 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,163 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,182 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,239 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,282 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,298 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:48,778 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:49,239 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:49,424 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:49,740 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:49,816 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:50,453 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:50,885 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:50,910 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:51,675 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:52,297 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:52,359 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:52,396 - ERROR - API error: 404 - {"error":{"message":"No endpoints found matching your data policy (Free model training). Configure: https://openrouter.ai/settings/privacy","code":404}}
+2026-02-27 17:08:56,117 - INFO - Found 46 orthos with complete image sets
+2026-02-27 17:08:56,117 - INFO - Remaining to process: 46
+2026-02-27 17:08:56,117 - INFO - Running with 10 worker(s)
+2026-02-27 17:08:57,338 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:58,431 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:58,435 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:58,601 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,160 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,205 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,290 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,627 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,661 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:08:59,891 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:00,370 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:00,420 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:00,505 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:00,552 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:00,924 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:01,124 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:01,714 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:01,829 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:01,909 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:02,011 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:02,266 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:02,641 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:03,008 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:03,195 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:03,358 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:03,664 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:03,949 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:04,327 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:04,454 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,089 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,136 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,455 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,473 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,860 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,989 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:05,994 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:06,203 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:06,340 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:06,341 - INFO - [10/46] done (throughput=0.98 imgs/s)
+2026-02-27 17:09:06,346 - INFO - Progress saved to georef_step_3.5_flash.csv (10 entries)
+2026-02-27 17:09:06,501 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:06,794 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:07,573 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:07,727 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:07,810 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:07,865 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,170 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,178 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,472 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,597 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,666 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:08,840 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:09,327 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:09,786 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:10,628 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:10,818 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:10,832 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:10,932 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,056 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,204 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,298 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,386 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,558 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:11,977 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:12,250 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:12,700 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:12,708 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:12,725 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:12,996 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:13,442 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:13,473 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:13,803 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:14,052 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:14,606 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:14,698 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:14,868 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:14,871 - INFO - [20/46] done (throughput=1.07 imgs/s)
+2026-02-27 17:09:14,873 - INFO - Progress saved to georef_step_3.5_flash.csv (20 entries)
+2026-02-27 17:09:14,962 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:15,135 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:15,558 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:15,562 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:15,674 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:15,905 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:16,496 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:16,567 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:16,696 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:16,987 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,421 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,591 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,704 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,704 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,761 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,889 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:17,999 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:18,065 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:18,335 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:18,553 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:19,109 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:19,424 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:19,510 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:19,680 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:20,063 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:20,523 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:20,758 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:20,921 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:21,014 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:21,015 - INFO - [30/46] done (throughput=1.20 imgs/s)
+2026-02-27 17:09:21,019 - INFO - Progress saved to georef_step_3.5_flash.csv (30 entries)
+2026-02-27 17:09:21,062 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:21,130 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:21,203 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:21,411 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:22,544 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:22,795 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:22,861 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:22,910 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:22,989 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,064 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,313 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,351 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,780 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,817 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,882 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:23,934 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:24,858 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:24,918 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:24,985 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,070 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,233 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,436 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,518 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,543 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:25,598 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:26,663 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:26,700 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:27,509 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:27,726 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:27,727 - INFO - [40/46] done (throughput=1.27 imgs/s)
+2026-02-27 17:09:27,731 - INFO - Progress saved to georef_step_3.5_flash.csv (40 entries)
+2026-02-27 17:09:27,747 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:27,816 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:28,175 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:28,361 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:29,293 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:29,297 - ERROR - API error: 404 - {"error":{"message":"No endpoints found that support image input","code":404}}
+2026-02-27 17:09:29,299 - INFO - [46/46] done (throughput=1.39 imgs/s)
+2026-02-27 17:09:29,306 - INFO - Progress saved to georef_step_3.5_flash.csv (46 entries)
+2026-02-27 17:09:29,309 - INFO - Progress saved to georef_step_3.5_flash.csv (46 entries)
+2026-02-27 17:09:29,309 - INFO - 
+Classification complete!
+2026-02-27 17:09:29,309 - INFO - Processed: 46 orthos
+2026-02-27 17:09:29,309 - INFO - Results saved to: georef_step_3.5_flash.csv
+2026-02-27 17:10:09,218 - INFO - Found 46 orthos with complete image sets
+2026-02-27 17:10:09,219 - INFO - Remaining to process: 46
+2026-02-27 17:10:09,219 - INFO - Running with 10 worker(s)
+2026-02-27 17:10:35,989 - INFO - [10/46] done (throughput=0.37 imgs/s)
+2026-02-27 17:10:35,995 - INFO - Progress saved to georef_gpt_5.2.csv (10 entries)
+2026-02-27 17:11:01,776 - INFO - [20/46] done (throughput=0.38 imgs/s)
+2026-02-27 17:11:01,780 - INFO - Progress saved to georef_gpt_5.2.csv (20 entries)
+2026-02-27 17:11:18,936 - INFO - [30/46] done (throughput=0.43 imgs/s)
+2026-02-27 17:11:18,941 - INFO - Progress saved to georef_gpt_5.2.csv (30 entries)
+2026-02-27 17:11:33,303 - INFO - [40/46] done (throughput=0.48 imgs/s)
+2026-02-27 17:11:33,306 - INFO - Progress saved to georef_gpt_5.2.csv (40 entries)
+2026-02-27 17:11:53,327 - INFO - [46/46] done (throughput=0.44 imgs/s)
+2026-02-27 17:11:53,332 - INFO - Progress saved to georef_gpt_5.2.csv (46 entries)
+2026-02-27 17:11:53,334 - INFO - Progress saved to georef_gpt_5.2.csv (46 entries)
+2026-02-27 17:11:53,335 - INFO - 
+Classification complete!
+2026-02-27 17:11:53,335 - INFO - Processed: 46 orthos
+2026-02-27 17:11:53,335 - INFO - Results saved to: georef_gpt_5.2.csv

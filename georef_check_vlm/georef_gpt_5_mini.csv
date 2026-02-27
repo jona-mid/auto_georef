@@ -1,0 +1,47 @@
+﻿ortho_id,classification,explanation
+148,CORRECT,CORRECT: The drone imagery is well aligned — the clearing and internal trail features match and line up with the underlying streets and satellite basemap.
+1768,CORRECT,CORRECT: The drone imagery aligns with the basemap and satellite layers — the dirt road and vegetation features match the underlying maps with only negligible offset.
+1889,CORRECT,"CORRECT: The drone imagery is well aligned with the basemap — woodland edges, field boundaries and the farm track line up closely with the underlying streets and satellite imagery."
+1638,CORRECT,"CORRECT: Roads, buildings and tree/hedgerow lines in the drone imagery line up with the basemap/satellite features, with only minor visual/seasonal differences."
+1335,CORRECT,"CORRECT: The drone ortho overlays align with the underlying basemap — roads, trails and clearings in the drone imagery match the same features in the satellite/streets layers."
+1789,CORRECT,"INCORRECT: The drone mosaic is visibly offset from the basemap/satellite — roads, ponds and field boundaries in the drone imagery do not line up with the underlying maps."
+203,CORRECT,CORRECT: The drone imagery is correctly georeferenced — field boundaries and tracks align closely with the roads and features on both the streets and satellite basemaps.
+1721,UNCERTAIN,No response received
+2496,CORRECT,"INCORRECT: The aerial strip is visibly offset/rotated — roads, trails and forest edges in the drone image do not line up with the underlying street and satellite basemaps."
+3765,CORRECT,INCORRECT: The drone mosaic is visibly shifted — tree patterns and the image edges do not line up with the underlying street/satellite basemap features.
+2483,CORRECT,"INCORRECT: The diagonal drone strip is visibly offset from the underlying river and vegetation features (the dark channel in the drone imagery does not align with the river/roads on the basemap), indicating the imagery is misaligned."
+2126,UNCERTAIN,No response received
+1336,UNCERTAIN,No response received
+2261,CORRECT,"CORRECT: The drone imagery lines up with the basemap—field edges, treelines and the small path match the underlying satellite/streets layers with only mosaic edge artifacts visible."
+3729,CORRECT,"CORRECT: The drone imagery lines up with the basemap — roads, building clusters and the forest/field boundaries match closely with only minimal edge cropping visible."
+282,CORRECT,"INCORRECT: The drone mosaic is visibly offset — trails, forest edges and streams in the drone imagery do not line up with the basemap/satellite (there is a clear lateral shift and seam)."
+3797,CORRECT,INCORRECT: The drone orthomosaic is visibly shifted — the roads/tracks in the drone layer do not line up with the streets/satellite basemap and are offset from the underlying features.
+3851,CORRECT,"INCORRECT: The drone orthomosaic is visibly shifted relative to the basemap/satellite layers — trails, roads and buildings in the drone image do not line up with the underlying features."
+3214,UNCERTAIN,No response received
+4530,CORRECT,"INCORRECT: The drone orthomosaic is misaligned — key features like clearings and tree patterns do not line up with the underlying satellite/streets basemap, showing a visible offset."
+5303,CORRECT,CORRECT: The drone imagery aligns with the underlying basemap—features and overall shape match the satellite/streets layer with no obvious shift or offset.
+4985,CORRECT,"INCORRECT: The drone mosaic is noticeably offset — roads, buildings and clearings in the drone imagery do not line up with the underlying street/satellite basemap (there is a clear lateral shift)."
+5243,CORRECT,INCORRECT: The drone imagery is visibly offset (shifted left/up) — the building roofs and driveway do not align with the basemap/satellite footprints and roads.
+4784,UNCERTAIN,No response received
+5088,UNCERTAIN,No response received
+5572,CORRECT,INCORRECT: The drone layer is visibly shifted/rotated relative to the basemap — tree crowns and the road alignment in the drone imagery do not match the underlying satellite/streets layers.
+5092,UNCERTAIN,No response received
+5496,CORRECT,"INCORRECT: The drone mosaic is visibly offset — tree patterns and clearings in the overlay do not line up with the underlying satellite/streets basemap, indicating misalignment."
+5782,CORRECT,INCORRECT: The drone layer is misaligned — trails and tree locations/shadows in the drone imagery are visibly shifted and do not match the underlying basemap/satellite features.
+608,CORRECT,"CORRECT: The drone imagery is properly georeferenced — roads, clearings and tree patterns align closely with the basemap/satellite features (e.g., the curved road and openings match up)."
+6384,CORRECT,INCORRECT: The drone orthomosaic is offset/rotated—roads and shoreline visible in the drone image do not line up with the underlying streets or satellite basemap.
+621,CORRECT,INCORRECT: The drone mosaic is displaced — roads/trails and clearings in the drone layer do not line up with the underlying street/satellite basemap (noticeable lateral shift).
+5778,CORRECT,INCORRECT: The drone image is visibly offset—dirt roads and tree shadows inside the orthomosaic do not line up with the underlying streets/satellite basemap features.
+559,UNCERTAIN,No response received
+6731,CORRECT,"CORRECT: The drone orthomosaic lines up with the basemap—buildings, driveways and road edges match the underlying streets and satellite imagery with no visible systematic shift."
+6386,UNCERTAIN,No response received
+6458,CORRECT,INCORRECT: The drone orthomosaic is visibly offset — the snow-covered roads/trails in
+70,CORRECT,CORRECT: The drone mosaic lines up with underlying features — the small road/track and tree canopy patterns match between the drone layer and both the streets and satellite basemaps.
+6936,CORRECT,INCORRECT: The drone mosaics are visibly offset from the basemap —
+7236,CORRECT,CORRECT: The drone mosaic aligns with the basemap — internal paths and clearings in the drone imagery match the underlying satellite features with no obvious shift.
+7374,CORRECT,INCORRECT: The drone orthomosaic is visibly shifted — field
+6779,UNCERTAIN,No response received
+6924,UNCERTAIN,No response received
+6929,UNCERTAIN,No response received
+7479,CORRECT,"CORRECT: The drone imagery is well aligned — the coastline, roads and building footprints in the ortho layer match the underlying street and satellite basemaps."
+7893,CORRECT,"INCORRECT: The circular drone ortho is visibly shifted/rotated relative to the basemap — roads, paths and building footprints in the drone image do not line up with the underlying streets/satellite imagery."

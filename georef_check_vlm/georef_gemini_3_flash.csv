@@ -1,0 +1,47 @@
+﻿ortho_id,classification,explanation
+1789,CORRECT,"CORRECT: The roads, water bodies, and vegetation boundaries in the drone imagery align precisely with the features shown in the satellite and street basemaps."
+148,CORRECT,CORRECT: The logging trails and the clearing in the drone imagery align precisely with the road patterns and forest gaps visible in the underlying satellite and street basemaps.
+2126,CORRECT,CORRECT: The drone imagery of the dense forest canopy aligns properly with the forested area and logging trails visible in the underlying satellite base map.
+1336,UNCERTAIN,No response received
+1638,CORRECT,"CORRECT: The drone imagery's roads, buildings, and field boundaries align perfectly with both the streets basemap and the underlying satellite imagery."
+1889,CORRECT,"CORRECT: The treeline, field boundaries, and farm tracks in the drone imagery align precisely with the features in the underlying satellite imagery and street map."
+1768,CORRECT,CORRECT: The primary road visible in the drone imagery aligns precisely with both the street vector map and the underlying satellite road path.
+203,CORRECT,CORRECT: The forestry trails and the main road in the northeast corner of the drone imagery align precisely with the features shown in both the streets and satellite basemaps.
+1721,CORRECT,CORRECT: The forest paths in the drone imagery align precisely with both the street map centerlines and the visible paths in the background satellite imagery.
+1335,CORRECT,CORRECT: The logging trails and the B 102 highway in the drone imagery align perfectly with both the streets and satellite basemaps.
+2483,CORRECT,CORRECT: The river segment and vegetation patterns in the drone imagery align precisely with the underlying satellite and street basemap features.
+3729,CORRECT,"CORRECT: The drone imagery's field boundaries, roads, and buildings align perfectly with the features shown in the grayscale satellite basemap."
+2496,CORRECT,CORRECT: The visible trail and forest clearings in the drone imagery align precisely with the corresponding textures and features in the underlying satellite imagery.
+3214,CORRECT,CORRECT: The drone imagery perfectly aligns with the curvature and position of the adjacent road (B 294) and existing forest paths.
+2261,CORRECT,CORRECT: The field boundaries and forest edges in the drone imagery perfectly align with the underlying satellite and street basemap features.
+3765,CORRECT,CORRECT: The drone imagery of the forest canopy aligns seamlessly with the texture and composition of the underlying satellite imagery.
+3851,CORRECT,"CORRECT: The drone imagery trails and vegetation density align perfectly with the paths, riverbanks, and building structures shown in both the streets and satellite basemaps."
+4530,CORRECT,CORRECT: The drone imagery matches the vegetation patterns and topography shown in the underlying satellite basemap.
+282,CORRECT,CORRECT: The field boundaries and forest edges in the drone imagery align precisely with the patterns and geographical features visible in the underlying satellite imagery.
+4784,CORRECT,CORRECT: The drone imagery perfectly aligns with Summer Hill Road to the north and matches the specific building positions and water body shapes seen in the satellite basemap.
+5092,CORRECT,CORRECT: The shoreline of the Burnett River and the vegetation patterns in the drone imagery align precisely with the underlying basemap features.
+3797,CORRECT,CORRECT: The primary road and small building in the drone imagery align precisely with the road path and clearing shown in the satellite basemap.
+4985,CORRECT,CORRECT: The drone imagery road paths and clearings perfectly align with both the street vector lines and the underlying satellite terrain features.
+5088,CORRECT,CORRECT: The riverbank and vegetation patterns in the drone imagery align precisely with the Burnett River shoreline and land features in the satellite basemap.
+5496,CORRECT,CORRECT: The drone imagery perfectly aligns with the forest clearings and dirt paths visible in the underlying satellite basemap.
+5303,UNCERTAIN,UNCERTAIN: The base satellite imagery is too pixelated and the street map too sparse to identify any common features for alignment verification.
+5243,CORRECT,CORRECT: The rooftops and access roads in the drone imagery align precisely with the building footprints on the streets basemap and the satellite imagery features.
+5572,CORRECT,CORRECT: The drone imagery patterns and the forest road in the bottom right corner align perfectly with the features in the satellite basemap.
+559,CORRECT,CORRECT: The forest paths and the boundary of the open field in the drone imagery align precisely with the features in both the streets basemap and the underlying satellite imagery.
+5778,CORRECT,CORRECT: The primary access road in the drone imagery perfectly aligns with the dotted road centerline in the streets basemap and the road visible in the satellite-only imagery.
+5782,CORRECT,CORRECT: The dirt tracks and tree clusters in the drone imagery align perfectly with the corresponding features in the satellite basemap.
+608,CORRECT,CORRECT: The logging roads and trails in the drone imagery align seamlessly with the corresponding paths in both the streets basemap and the underlying satellite imagery.
+6384,UNCERTAIN,UNCERTAIN: Both the street and satellite basemaps lack any distinguishable features or landmarks to provide a basis for alignment.
+621,CORRECT,CORRECT: The logging trails and main road in the drone imagery align perfectly with the forest paths and road visible in the satellite basemap.
+6386,UNCERTAIN,UNCERTAIN: The satellite and street basemaps lack any visible features or reference points to verify the alignment of the drone imagery.
+6779,CORRECT,INCORRECT: The drone imagery of a developed park with paths and a playground is placed over a satellite basemap showing only an empty agricultural field.
+6731,CORRECT,"CORRECT: The drone imagery buildings, parking lots, and road edges align perfectly with the footprint indicators on the streets basemap and features in the underlying satellite imagery."
+6929,CORRECT,INCORRECT: The drone imagery shows a coastal/beach environment while the underlying satellite and street basemaps show inland agricultural fields and a straight road (D 114p).
+6924,CORRECT,"INCORRECT: The drone imagery shows a rocky archipelago that does not exist in the flat, agricultural landscape of the satellite and street basemaps."
+7236,CORRECT,CORRECT: The drone imagery's forested features and clearings align seamlessly with the textures and canopy patterns of the underlying satellite basemap.
+7374,CORRECT,"CORRECT: The field boundaries, the dense treeline along the eastern edge, and the rural access roads in the drone imagery align perfectly with the features visible in the underlying satellite basemap."
+70,CORRECT,CORRECT: The logging road in the bottom-left corner of the drone imagery aligns perfectly with the Hauertweg road segment on the basemap.
+6936,CORRECT,CORRECT: The diagonal road and field boundary in the drone imagery align perfectly with the corresponding features in the satellite and street basemaps.
+7479,CORRECT,"CORRECT: The drone imagery's roads, coastlines, and building footprints align precisely with the features shown in both the street and satellite basemaps."
+6458,CORRECT,CORRECT: The forest paths and roads in the drone imagery align perfectly with the paths visible in both the streets and satellite basemaps.
+7893,CORRECT,"CORRECT: The drone imagery's roads, parking lots, and building footprints align perfectly with the underlying street vectors and satellite base features."
