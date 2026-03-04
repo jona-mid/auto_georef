@@ -1,0 +1,35 @@
+# Georeferencing Quality Check Configuration
+# This is the default runtime configuration. CLI flags override these values.
+
+# Data paths
+dataset_dir: data/raw/dataset_custom
+labels_csv: data/raw/dataset_custom/labels.csv
+split_csv: data/processed/train_test_split.csv
+
+# Processing options
+use_streets: true
+use_satellite: true
+viewport_size: 1024
+zoom_level: 17
+
+# Feature extraction
+feature_version: "v1"
+output_features_csv: data/processed/features.csv
+
+# Threshold baseline (from F1 optimization)
+threshold: 0.10
+
+# Classifier training
+classifier_enabled: false
+classifier_output_path: data/models/classifier.pkl
+model_type: xgboost
+
+# Inference
+predict_output_dir: outputs/check_results
+
+# Evaluation
+eval_output: data/processed/eval_metrics.json
+
+# Other
+seed: 42
+dry_run: false

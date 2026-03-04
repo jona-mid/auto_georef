@@ -1,48 +1,52 @@
 [
-  {"ortho_id": 70, "label": 1, "has_images": true},
-  {"ortho_id": 148, "label": 1, "has_images": true},
-  {"ortho_id": 203, "label": 1, "has_images": true},
-  {"ortho_id": 282, "label": 0, "has_images": true},
-  {"ortho_id": 559, "label": 1, "has_images": true},
-  {"ortho_id": 608, "label": 1, "has_images": true},
-  {"ortho_id": 621, "label": 1, "has_images": true},
-  {"ortho_id": 1335, "label": 1, "has_images": true},
-  {"ortho_id": 1336, "label": 1, "has_images": true},
-  {"ortho_id": 1638, "label": 1, "has_images": true},
-  {"ortho_id": 1721, "label": 1, "has_images": true},
-  {"ortho_id": 1768, "label": 1, "has_images": true},
-  {"ortho_id": 1789, "label": 1, "has_images": true},
-  {"ortho_id": 1889, "label": 1, "has_images": true},
-  {"ortho_id": 2126, "label": 1, "has_images": true},
-  {"ortho_id": 2261, "label": 1, "has_images": true},
-  {"ortho_id": 2483, "label": 0, "has_images": true},
-  {"ortho_id": 2496, "label": 0, "has_images": true},
-  {"ortho_id": 3214, "label": 1, "has_images": true},
-  {"ortho_id": 3729, "label": 1, "has_images": true},
-  {"ortho_id": 3765, "label": 1, "has_images": true},
-  {"ortho_id": 3797, "label": 1, "has_images": true},
-  {"ortho_id": 3851, "label": 1, "has_images": true},
-  {"ortho_id": 4530, "label": 1, "has_images": true},
-  {"ortho_id": 4784, "label": 1, "has_images": true},
-  {"ortho_id": 4985, "label": 1, "has_images": true},
-  {"ortho_id": 5088, "label": 0, "has_images": true},
-  {"ortho_id": 5092, "label": 0, "has_images": true},
-  {"ortho_id": 5243, "label": 1, "has_images": true},
-  {"ortho_id": 5303, "label": 0, "has_images": true},
-  {"ortho_id": 5496, "label": 1, "has_images": true},
-  {"ortho_id": 5572, "label": 1, "has_images": true},
-  {"ortho_id": 5778, "label": 1, "has_images": true},
-  {"ortho_id": 5782, "label": 1, "has_images": true},
-  {"ortho_id": 6384, "label": 0, "has_images": true},
-  {"ortho_id": 6386, "label": 0, "has_images": true},
-  {"ortho_id": 6458, "label": 1, "has_images": true},
-  {"ortho_id": 6731, "label": 1, "has_images": true},
-  {"ortho_id": 6779, "label": 0, "has_images": true},
-  {"ortho_id": 6924, "label": 0, "has_images": true},
-  {"ortho_id": 6929, "label": 0, "has_images": true},
-  {"ortho_id": 6936, "label": 0, "has_images": true},
-  {"ortho_id": 7236, "label": 0, "has_images": true},
-  {"ortho_id": 7374, "label": 1, "has_images": true},
-  {"ortho_id": 7479, "label": 1, "has_images": true},
-  {"ortho_id": 7893, "label": 1, "has_images": true}
+  {
+    "ortho_id": 6434,
+    "url": "https://deadtrees.earth/dataset-audit/6434",
+    "label": 0
+  },
+  {
+    "ortho_id": 6395,
+    "url": "https://deadtrees.earth/dataset-audit/6395",
+    "label": 0
+  },
+  {
+    "ortho_id": 6393,
+    "url": "https://deadtrees.earth/dataset-audit/6393",
+    "label": 0
+  },
+  {
+    "ortho_id": 6390,
+    "url": "https://deadtrees.earth/dataset-audit/6390",
+    "label": 0
+  },
+  {
+    "ortho_id": 6602,
+    "url": "https://deadtrees.earth/dataset-audit/6602",
+    "label": 0
+  },
+  {
+    "ortho_id": 6019,
+    "url": "https://deadtrees.earth/dataset-audit/6019",
+    "label": 0
+  },
+  {
+    "ortho_id": 4892,
+    "url": "https://deadtrees.earth/dataset-audit/4892",
+    "label": 0
+  },
+  {
+    "ortho_id": 4838,
+    "url": "https://deadtrees.earth/dataset-audit/4838",
+    "label": 0
+  },
+  {
+    "ortho_id": 4132,
+    "url": "https://deadtrees.earth/dataset-audit/4132",
+    "label": 0
+  },
+  {
+    "ortho_id": 4035,
+    "url": "https://deadtrees.earth/dataset-audit/4035",
+    "label": 0
+  }
 ]

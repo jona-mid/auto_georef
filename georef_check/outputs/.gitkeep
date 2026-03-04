@@ -1,0 +1,2 @@
+# This directory stores per-run inference outputs
+# Add output directories as needed (e.g., outputs/check_results/)

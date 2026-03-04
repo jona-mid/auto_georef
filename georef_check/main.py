@@ -8,9 +8,29 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import config_loader
+
 
 def main():
     parser = argparse.ArgumentParser(description="Georeferencing Quality Check System")
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="Path to YAML config file (CLI flags override config values)",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Random seed for reproducibility",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=None,
+        help="Validate file presence without processing",
+    )
 
     subparsers = parser.add_subparsers(dest="command", help="Commands")
 
@@ -91,26 +111,73 @@ def main():
 
     check_parser = subparsers.add_parser("check", help="Check georeferencing")
     check_parser.add_argument(
-        "--input", type=str, required=True, help="GeoTIFF file, or directory with 4-state PNGs, or path to ortho_streets image"
+        "--input",
+        type=str,
+        required=True,
+        help="GeoTIFF file, or directory with 4-state PNGs, or path to ortho_streets image",
     )
     check_parser.add_argument(
-        "--streets-only", type=str, default=None, help="Path to streets_only image (4-state mode)"
+        "--streets-only",
+        type=str,
+        default=None,
+        help="Path to streets_only image (4-state mode)",
     )
     check_parser.add_argument(
-        "--ortho-satellite", type=str, default=None, help="Path to ortho_satellite image (4-state mode)"
+        "--ortho-satellite",
+        type=str,
+        default=None,
+        help="Path to ortho_satellite image (4-state mode)",
     )
     check_parser.add_argument(
-        "--satellite-only", type=str, default=None, help="Path to satellite_only image (4-state mode)"
+        "--satellite-only",
+        type=str,
+        default=None,
+        help="Path to satellite_only image (4-state mode)",
     )
     check_parser.add_argument(
-        "--model", type=str, default="data/models/classifier.pkl", help="Model path (GeoTIFF mode)"
+        "--model",
+        type=str,
+        default="data/models/classifier.pkl",
+        help="Model path (GeoTIFF mode)",
     )
     check_parser.add_argument(
-        "--threshold", type=float, default=0.5, help="Classification threshold (GeoTIFF mode)"
+        "--threshold",
+        type=float,
+        default=0.5,
+        help="Classification threshold (GeoTIFF mode)",
     )
     check_parser.add_argument("--output", type=str, help="Output JSON file")
 
     args = parser.parse_args()
+
+    # Load config if provided
+    config = {}
+    if args.config:
+        config = config_loader.load_config(args.config)
+        print(f"Loaded config from: {args.config}")
+    else:
+        # Try default config
+        default_config = config_loader.get_default_config_path()
+        if Path(default_config).exists():
+            config = config_loader.load_config(default_config)
+            print(f"Using default config: {default_config}")
+
+    # Merge CLI args with config (CLI overrides)
+    merged_config = config_loader.merge_config_with_args(config, args)
+
+    # Helper to resolve args with config fallback
+    def resolve_arg(arg_name, config_key=None, default=None):
+        """Get value: CLI arg > config > default"""
+        if config_key is None:
+            config_key = arg_name
+        # If CLI arg was explicitly provided (not None), use it
+        val = getattr(args, arg_name, None)
+        if val is not None:
+            return val
+        # Otherwise try config
+        if config_key in merged_config:
+            return merged_config[config_key]
+        return default
 
     if args.command == "collect":
         from src.data_collection.fetcher import DataCollector, OrthoImage
@@ -134,22 +201,43 @@ def main():
         from PIL import Image
         from src.features import extract_features
 
-        input_dir = Path(args.input_dir)
+        # Resolve args with config fallback
+        input_dir = resolve_arg("input_dir", "dataset_dir")
+        if input_dir:
+            input_dir = Path(input_dir)
+        else:
+            input_dir = Path("data/raw/dataset_custom")  # fallback
+        labels_path = resolve_arg("labels", "labels_csv")
+        split_file = resolve_arg("split_file", "split_csv")
+        output_path = resolve_arg(
+            "output", "output_features_csv", "data/processed/features.csv"
+        )
+
+        # Dry-run mode: just validate files
+        if resolve_arg("dry_run"):
+            print("[DRY RUN] Would process features for:")
+            print(f"  input_dir: {input_dir}")
+            print(f"  labels: {labels_path}")
+            print(f"  split_file: {split_file}")
+            print(f"  output: {output_path}")
+            return
 
         # 4-state path: split file + SuperPoint+LightGlue
-        if getattr(args, "split_file", None):
-            split_path = Path(args.split_file)
+        if split_file:
+            split_path = Path(split_file)
             if not split_path.exists():
                 print(f"Split file not found: {split_path}")
                 sys.exit(1)
             split_df = pd.read_csv(split_path)
             for col in ["ortho_id", "label", "split"]:
                 if col not in split_df.columns:
-                    print(f"Split file must have columns: ortho_id, label, split. Missing: {col}")
+                    print(
+                        f"Split file must have columns: ortho_id, label, split. Missing: {col}"
+                    )
                     sys.exit(1)
             from src.features.matching import check_georeferencing
 
-            satellite_only_mode = getattr(args, "satellite_only", False)
+            satellite_only_mode = resolve_arg("satellite_only") or False
             if satellite_only_mode:
                 print("Using satellite images only (ortho_satellite vs satellite_only)")
 
@@ -163,14 +251,23 @@ def main():
                 if satellite_only_mode:
                     required = [ortho_satellite, satellite_only]
                 else:
-                    required = [ortho_streets, streets_only, ortho_satellite, satellite_only]
+                    required = [
+                        ortho_streets,
+                        streets_only,
+                        ortho_satellite,
+                        satellite_only,
+                    ]
                 if not all(p.exists() for p in required):
                     print(f"Skipping {oid}: missing required PNGs")
                     continue
                 try:
                     res = check_georeferencing(
-                        ortho_streets_path=str(ortho_streets) if not satellite_only_mode else None,
-                        streets_only_path=str(streets_only) if not satellite_only_mode else None,
+                        ortho_streets_path=str(ortho_streets)
+                        if not satellite_only_mode
+                        else None,
+                        streets_only_path=str(streets_only)
+                        if not satellite_only_mode
+                        else None,
                         ortho_satellite_path=str(ortho_satellite),
                         satellite_only_path=str(satellite_only),
                         basemap="satellite" if satellite_only_mode else "both",
@@ -181,31 +278,39 @@ def main():
                         "split": row["split"],
                         "good_probability": res["combined_good_probability"],
                         "inlier_ratio_satellite": res["satellite"]["inlier_ratio"],
-                        "median_error_satellite": res["satellite"]["median_reprojection_error"],
+                        "median_error_satellite": res["satellite"][
+                            "median_reprojection_error"
+                        ],
                     }
                     if not satellite_only_mode:
-                        row_data["inlier_ratio_streets"] = res["streets"]["inlier_ratio"]
-                        row_data["median_error_streets"] = res["streets"]["median_reprojection_error"]
+                        row_data["inlier_ratio_streets"] = res["streets"][
+                            "inlier_ratio"
+                        ]
+                        row_data["median_error_streets"] = res["streets"][
+                            "median_reprojection_error"
+                        ]
                     rows.append(row_data)
                     print(f"Extracted features for {oid}")
                 except Exception as e:
                     print(f"Error processing {oid}: {e}")
             if rows:
                 out_df = pd.DataFrame(rows)
-                Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-                out_df.to_csv(args.output, index=False)
+                Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+                out_df.to_csv(output_path, index=False)
                 n_good = sum(r["label"] for r in rows)
                 print(f"\nExtracted 4-state features for {len(rows)} samples")
-                print(f"  Label 1 (good): {n_good}, Label 0 (bad): {len(rows) - n_good}")
-                print(f"  Saved to: {args.output}")
+                print(
+                    f"  Label 1 (good): {n_good}, Label 0 (bad): {len(rows) - n_good}"
+                )
+                print(f"  Saved to: {output_path}")
             else:
                 print("No features extracted (all rows skipped or errors)")
         else:
             labels_df = None
-            if args.labels:
-                labels_path = Path(args.labels)
-                if labels_path.exists():
-                    labels_df = pd.read_csv(labels_path)
+            if labels_path:
+                labels_file = Path(labels_path)
+                if labels_file.exists():
+                    labels_df = pd.read_csv(labels_file)
                     print(f"Loaded labels from {labels_path}: {len(labels_df)} entries")
 
             if labels_df is not None:
@@ -248,13 +353,13 @@ def main():
 
                     df = pd.DataFrame(data)
 
-                    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-                    df.to_csv(args.output, index=False)
+                    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+                    df.to_csv(output_path, index=False)
 
                     print(f"\nExtracted features for {len(df)} samples")
                     print(f"  Label 1 (good): {sum(labels)}")
                     print(f"  Label 0 (bad): {len(labels) - sum(labels)}")
-                    print(f"  Saved to: {args.output}")
+                    print(f"  Saved to: {output_path}")
                 else:
                     print("No features extracted")
 
@@ -263,9 +368,9 @@ def main():
 
                 builder = DatasetBuilder()
                 dataset = builder.build_from_files(
-                    args.input_dir,
-                    n_negatives_per_sample=args.n_negatives,
-                    output_file=args.output,
+                    str(input_dir),
+                    n_negatives_per_sample=resolve_arg("n_negatives"),
+                    output_file=output_path,
                 )
                 print(f"Built dataset with {len(dataset)} samples")
 
@@ -280,7 +385,28 @@ def main():
             roc_auc_score,
         )
 
-        df = pd.read_csv(args.data)
+        # Resolve args with config fallback
+        data_path = resolve_arg(
+            "data", "output_features_csv", "data/processed/features.csv"
+        )
+        model_type = resolve_arg("model", "model_type", "xgboost")
+        output_path = resolve_arg(
+            "output", "classifier_output_path", "data/models/classifier.pkl"
+        )
+        eval_output = resolve_arg("eval_output", "eval_output")
+        seed = resolve_arg("seed", default=42)
+
+        # Dry-run mode
+        if resolve_arg("dry_run"):
+            print("[DRY RUN] Would train model:")
+            print(f"  data: {data_path}")
+            print(f"  model_type: {model_type}")
+            print(f"  output: {output_path}")
+            print(f"  eval_output: {eval_output}")
+            print(f"  seed: {seed}")
+            return
+
+        df = pd.read_csv(data_path)
         if "label" not in df.columns:
             print("Features CSV must have a 'label' column")
             sys.exit(1)
@@ -294,7 +420,7 @@ def main():
                 sys.exit(1)
             print(f"Using split column: {len(train_df)} train, {len(test_df)} test")
         else:
-            np.random.seed(42)
+            np.random.seed(seed)
             indices = np.random.permutation(len(df))
             split = int(0.8 * len(df))
             train_df = df.iloc[indices[:split]].copy()
@@ -304,7 +430,9 @@ def main():
         # Threshold-only mode: use good_probability as score, no classifier
         if getattr(args, "threshold_only", False):
             if "good_probability" not in df.columns:
-                print("Threshold-only mode requires 'good_probability' column in features CSV")
+                print(
+                    "Threshold-only mode requires 'good_probability' column in features CSV"
+                )
                 sys.exit(1)
             y_train = train_df["label"].values
             y_test = test_df["label"].values
@@ -344,13 +472,15 @@ def main():
             print("  Test set metrics at fixed thresholds:")
             for th in [0.3, 0.5, 0.7]:
                 m = eval_at(prob_test, y_test, th)
-                print(f"    threshold={th}: acc={m['accuracy']:.4f} prec={m['precision']:.4f} rec={m['recall']:.4f} f1={m['f1']:.4f}")
+                print(
+                    f"    threshold={th}: acc={m['accuracy']:.4f} prec={m['precision']:.4f} rec={m['recall']:.4f} f1={m['f1']:.4f}"
+                )
 
-            eval_out = getattr(args, "eval_output", None)
-            if eval_out:
+            if eval_output:
                 import json
-                Path(eval_out).parent.mkdir(parents=True, exist_ok=True)
-                with open(eval_out, "w") as f:
+
+                Path(eval_output).parent.mkdir(parents=True, exist_ok=True)
+                with open(eval_output, "w") as f:
                     json.dump(
                         {
                             "best_threshold": best_thresh,
@@ -360,16 +490,17 @@ def main():
                         f,
                         indent=2,
                     )
-                print(f"\nEval metrics saved to: {eval_out}")
+                print(f"\nEval metrics saved to: {eval_output}")
         else:
             from src.training.train import train_model
 
             feature_cols = [
-                c for c in df.columns
-                if c not in ["label", "ortho_id", "split"]
+                c for c in df.columns if c not in ["label", "ortho_id", "split"]
             ]
             if not feature_cols:
-                print("No feature columns found (need at least one of good_probability or other metrics)")
+                print(
+                    "No feature columns found (need at least one of good_probability or other metrics)"
+                )
                 sys.exit(1)
             X_train = train_df[feature_cols].values.astype(np.float64)
             y_train = train_df["label"].values
@@ -382,28 +513,44 @@ def main():
             X_val = np.nan_to_num(X_val, nan=0.0, posinf=FINITE_CAP, neginf=0.0)
 
             clf, metrics = train_model(
-                X_train, y_train, X_val, y_val, model_type=args.model
+                X_train, y_train, X_val, y_val, model_type=model_type
             )
 
-            Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-            clf.save(args.output)
+            Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+            clf.save(output_path)
 
-            print(f"\nModel saved to: {args.output}")
+            print(f"\nModel saved to: {output_path}")
             if "accuracy" in metrics.get("val", {}):
                 print(f"Test accuracy: {metrics['val']['accuracy']:.2%}")
-            eval_out = getattr(args, "eval_output", None)
-            if eval_out:
+            if eval_output:
                 import json
-                Path(eval_out).parent.mkdir(parents=True, exist_ok=True)
+
+                Path(eval_output).parent.mkdir(parents=True, exist_ok=True)
                 to_save = {"train": metrics.get("train"), "val": metrics.get("val")}
                 if "optimal_threshold" in metrics:
                     to_save["optimal_threshold"] = float(metrics["optimal_threshold"])
-                with open(eval_out, "w") as f:
+                with open(eval_output, "w") as f:
                     json.dump(to_save, f, indent=2)
-                print(f"Eval metrics saved to: {eval_out}")
+                print(f"Eval metrics saved to: {eval_output}")
 
     elif args.command == "check":
         import json
+
+        # Resolve args with config fallback
+        threshold = resolve_arg("threshold", "threshold", 0.10)
+        model_path = resolve_arg(
+            "model", "classifier_output_path", "data/models/classifier.pkl"
+        )
+        output_path = resolve_arg("output", "predict_output_dir")
+
+        # Dry-run mode
+        if resolve_arg("dry_run"):
+            print("[DRY RUN] Would check georeferencing:")
+            print(f"  input: {args.input}")
+            print(f"  threshold: {threshold}")
+            print(f"  model: {model_path}")
+            print(f"  output: {output_path}")
+            return
 
         input_path = Path(args.input)
         streets_only = getattr(args, "streets_only", None)
@@ -413,6 +560,7 @@ def main():
         # 4-state mode: four explicit paths
         if streets_only and ortho_satellite and satellite_only:
             from src.features.matching import check_georeferencing
+
             res = check_georeferencing(
                 str(input_path),
                 streets_only,
@@ -430,35 +578,58 @@ def main():
                 streets_only_p = input_path / f"{oid}_streets_only.png"
                 ortho_sat_p = input_path / f"{oid}_ortho_satellite.png"
                 satellite_only_p = input_path / f"{oid}_satellite_only.png"
-                if streets_only_p.exists() and ortho_sat_p.exists() and satellite_only_p.exists():
-                    ortho_ids.append((oid, str(f), str(streets_only_p), str(ortho_sat_p), str(satellite_only_p)))
+                if (
+                    streets_only_p.exists()
+                    and ortho_sat_p.exists()
+                    and satellite_only_p.exists()
+                ):
+                    ortho_ids.append(
+                        (
+                            oid,
+                            str(f),
+                            str(streets_only_p),
+                            str(ortho_sat_p),
+                            str(satellite_only_p),
+                        )
+                    )
             if ortho_ids:
                 from src.features.matching import check_georeferencing
+
                 results = []
                 for oid, p1, p2, p3, p4 in ortho_ids:
                     res = check_georeferencing(p1, p2, p3, p4)
-                    results.append({"ortho_id": oid, "good_probability": res["combined_good_probability"]})
+                    results.append(
+                        {
+                            "ortho_id": oid,
+                            "good_probability": res["combined_good_probability"],
+                        }
+                    )
             else:
                 # Fall back to GeoTIFF pipeline (directory of GeoTIFFs)
                 from src.inference.pipeline import GeorefPipeline
                 from src.data_collection.fetcher import DataCollector
-                pipeline = GeorefPipeline(model_path=args.model, threshold=args.threshold)
+
+                pipeline = GeorefPipeline(model_path=model_path, threshold=threshold)
                 collector = DataCollector()
                 images = collector.load_from_directory(str(input_path))
                 results = pipeline.check_batch(images)
         elif input_path.is_file():
             # Single file: treat as GeoTIFF (existing behavior)
             from src.inference.pipeline import GeorefPipeline
-            pipeline = GeorefPipeline(model_path=args.model, threshold=args.threshold)
+
+            pipeline = GeorefPipeline(model_path=model_path, threshold=threshold)
             result = pipeline.check_from_file(str(input_path))
             results = [result]
         else:
             print(f"Input not found: {input_path}")
             sys.exit(1)
 
-        if args.output:
-            with open(args.output, "w") as f:
+        if output_path:
+            output_file = Path(output_path)
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_file, "w") as f:
                 json.dump(results, f, indent=2)
+            print(f"Results saved to: {output_file}")
         else:
             for r in results:
                 print(json.dumps(r))
