@@ -281,6 +281,11 @@ def main():
                         "median_error_satellite": res["satellite"][
                             "median_reprojection_error"
                         ],
+                        "num_matches_satellite": res["satellite"]["num_matches"],
+                        "num_inliers_satellite": res["satellite"]["num_inliers"],
+                        "good_probability_satellite": res["satellite"][
+                            "good_probability"
+                        ],
                     }
                     if not satellite_only_mode:
                         row_data["inlier_ratio_streets"] = res["streets"][
@@ -289,6 +294,25 @@ def main():
                         row_data["median_error_streets"] = res["streets"][
                             "median_reprojection_error"
                         ]
+                        row_data["num_matches_streets"] = res["streets"]["num_matches"]
+                        row_data["num_inliers_streets"] = res["streets"]["num_inliers"]
+                        row_data["good_probability_streets"] = res["streets"][
+                            "good_probability"
+                        ]
+
+                        # Combined min/max features for robustness
+                        row_data["inlier_ratio_min"] = min(
+                            res["streets"]["inlier_ratio"],
+                            res["satellite"]["inlier_ratio"],
+                        )
+                        row_data["median_error_max"] = max(
+                            res["streets"]["median_reprojection_error"],
+                            res["satellite"]["median_reprojection_error"],
+                        )
+                        row_data["num_matches_min"] = min(
+                            res["streets"]["num_matches"],
+                            res["satellite"]["num_matches"],
+                        )
                     rows.append(row_data)
                     print(f"Extracted features for {oid}")
                 except Exception as e:
@@ -375,6 +399,7 @@ def main():
                 print(f"Built dataset with {len(dataset)} samples")
 
     elif args.command == "train":
+        import json
         import numpy as np
         import pandas as pd
         from sklearn.metrics import (
@@ -383,6 +408,8 @@ def main():
             recall_score,
             f1_score,
             roc_auc_score,
+            confusion_matrix,
+            balanced_accuracy_score,
         )
 
         # Resolve args with config fallback
@@ -427,6 +454,21 @@ def main():
             test_df = df.iloc[indices[split:]].copy()
             print(f"Random 0.8 split: {len(train_df)} train, {len(test_df)} test")
 
+        # Check for class imbalance and warn
+        n_good_train = (train_df["label"] == 1).sum()
+        n_bad_train = (train_df["label"] == 0).sum()
+        minority_class = min(n_good_train, n_bad_train)
+        imbalance_ratio = max(n_good_train, n_bad_train) / max(minority_class, 1)
+
+        if minority_class < 10:
+            print(f"\n⚠️  WARNING: Class imbalance detected!")
+            print(
+                f"   Train: {n_good_train} good, {n_bad_train} bad (ratio: {imbalance_ratio:.1f}:1)"
+            )
+            print(
+                f"   Consider: collecting more minority samples, using class weights, or balanced metrics"
+            )
+
         # Threshold-only mode: use good_probability as score, no classifier
         if getattr(args, "threshold_only", False):
             if "good_probability" not in df.columns:
@@ -454,9 +496,11 @@ def main():
                 preds = (probs >= thresh).astype(int)
                 return {
                     "accuracy": accuracy_score(labels, preds),
+                    "balanced_accuracy": balanced_accuracy_score(labels, preds),
                     "precision": precision_score(labels, preds, zero_division=0),
                     "recall": recall_score(labels, preds, zero_division=0),
                     "f1": f1_score(labels, preds, zero_division=0),
+                    "confusion_matrix": confusion_matrix(labels, preds).tolist(),
                 }
 
             test_metrics_best = eval_at(prob_test, y_test, best_thresh)
@@ -467,18 +511,21 @@ def main():
             print(f"  Best threshold (on train, by F1): {best_thresh:.2f}")
             print("  Test set metrics at best threshold:")
             for k, v in test_metrics_best.items():
-                if k != "threshold" and isinstance(v, float):
+                if (
+                    k != "threshold"
+                    and k != "confusion_matrix"
+                    and isinstance(v, float)
+                ):
                     print(f"    {k}: {v:.4f}")
+            print(f"    confusion_matrix: {test_metrics_best['confusion_matrix']}")
             print("  Test set metrics at fixed thresholds:")
             for th in [0.3, 0.5, 0.7]:
                 m = eval_at(prob_test, y_test, th)
                 print(
-                    f"    threshold={th}: acc={m['accuracy']:.4f} prec={m['precision']:.4f} rec={m['recall']:.4f} f1={m['f1']:.4f}"
+                    f"    threshold={th}: acc={m['accuracy']:.4f} bal_acc={m['balanced_accuracy']:.4f} prec={m['precision']:.4f} rec={m['recall']:.4f} f1={m['f1']:.4f}"
                 )
 
             if eval_output:
-                import json
-
                 Path(eval_output).parent.mkdir(parents=True, exist_ok=True)
                 with open(eval_output, "w") as f:
                     json.dump(
@@ -491,6 +538,22 @@ def main():
                         indent=2,
                     )
                 print(f"\nEval metrics saved to: {eval_output}")
+
+            # Generate threshold-only manifest
+            manifest_path = Path("data/models/model_manifest.json")
+            manifest_path.parent.mkdir(parents=True, exist_ok=True)
+            manifest = {
+                "created_at": pd.Timestamp.now().isoformat(),
+                "feature_version": resolve_arg("feature_version", default="v1"),
+                "threshold_baseline": float(best_thresh),
+                "train_samples": len(train_df),
+                "test_samples": len(test_df),
+                "metrics_path": str(eval_output) if eval_output else None,
+                "notes": f"Threshold-only mode. Best threshold: {best_thresh:.2f}",
+            }
+            with open(manifest_path, "w") as f:
+                json.dump(manifest, f, indent=2)
+            print(f"Model manifest saved to: {manifest_path}")
         else:
             from src.training.train import train_model
 
@@ -523,8 +586,6 @@ def main():
             if "accuracy" in metrics.get("val", {}):
                 print(f"Test accuracy: {metrics['val']['accuracy']:.2%}")
             if eval_output:
-                import json
-
                 Path(eval_output).parent.mkdir(parents=True, exist_ok=True)
                 to_save = {"train": metrics.get("train"), "val": metrics.get("val")}
                 if "optimal_threshold" in metrics:
@@ -532,6 +593,23 @@ def main():
                 with open(eval_output, "w") as f:
                     json.dump(to_save, f, indent=2)
                 print(f"Eval metrics saved to: {eval_output}")
+
+            # Generate model artifact manifest
+            manifest_path = Path(output_path).parent / "model_manifest.json"
+            manifest = {
+                "created_at": pd.Timestamp.now().isoformat(),
+                "feature_version": resolve_arg("feature_version", default="v1"),
+                "threshold_baseline": resolve_arg("threshold", default=0.10),
+                "classifier_path": str(output_path),
+                "train_samples": len(train_df),
+                "test_samples": len(test_df),
+                "metrics_path": str(eval_output) if eval_output else None,
+                "model_type": model_type,
+                "notes": f"Trained on {len(train_df)} train, {len(test_df)} test samples.",
+            }
+            with open(manifest_path, "w") as f:
+                json.dump(manifest, f, indent=2)
+            print(f"Model manifest saved to: {manifest_path}")
 
     elif args.command == "check":
         import json
