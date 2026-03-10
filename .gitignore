@@ -24,6 +24,9 @@ Thumbs.db
 # VSCode
 .vscode/
 
+# Env files
+.env
+
 # Python packaging
 dist/
 build/
