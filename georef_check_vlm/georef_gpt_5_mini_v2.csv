@@ -1,0 +1,61 @@
+﻿ortho_id,classification,explanation
+1335,CORRECT,INCORRECT: The drone ortho is rotated/shifted — dirt tracks and road/intersection locations in the drone layer do not line up with the streets basemap or satellite roads (visible consistent offset/rotation).
+1336,UNCERTAIN,No response received
+148,UNCERTAIN,No response received
+1638,UNCERTAIN,No response received
+1789,CORRECT,INCORRECT: The drone imagery is shifted relative to the street basemap — the diagonal access track/road in the center-bottom of
+1768,UNCERTAIN,No response received
+1721,UNCERTAIN,No response received
+1889,UNCERTAIN,No response received
+1899,CORRECT,"INCORRECT: the drone mosaic is laterally shifted/rotated — the road Hullerbusch and the hotel/building/driveway on the right and the small access path at the bottom do not line up with the streets/satellite basemap, showing a clear offset."
+2261,UNCERTAIN,No response received
+203,UNCERTAIN,No response received
+2483,CORRECT,INCORRECT: The drone strip is visibly offset/rotated — roads/river corridor near Surungo on the streets basemap do not line up with the channel in the drone layer
+2126,UNCERTAIN,No response received
+2496,CORRECT,INCORRECT: The diagonal drone strip is
+282,UNCERTAIN,No response received
+3214,UNCERTAIN,No response received
+3729,UNCERTAIN,No response received
+3765,CORRECT,"INCORRECT: The drone mosaic is misaligned — tree canopy patterns in the drone layer do not line up with the underlying satellite basemap (visible offset at the right-hand boundary and mismatched forest texture), so the imagery is not correctly ge"
+4035,CORRECT,CORRECT: The drone layer is well aligned — the main north–south road and its cross intersections match the streets basemap and tree/field boundaries in the satellite overlay coincide with the drone imagery.
+3797,CORRECT,"CORRECT: The junction at the top-left and the winding forest track align with the streets basemap and the same road/tree boundaries match the satellite layer, indicating the drone ortho is well-georeferenced."
+4530,CORRECT,"CORRECT: Streets basemap shows no road features to compare, but the drone mosaic lines up with the satellite layer — tree patterns, clearings and field/forest boundaries match."
+3851,CORRECT,INCORRECT: The drone orthomosaic is misaligned — trails/roads (notably the top‑center trail junction and the stream/path at the right) in the drone layer do not line up with the streets basemap and are visibly shifted/rotated relative to the underlying maps.
+4892,CORRECT,"INCORRECT: The drone ortho is offset (shifted east/northeast) — the sandbar/island and shoreline in the drone layer do not line up with the basemap water boundary and nearby Sandybanks Track/screened roads, indicating misalignment."
+4784,UNCERTAIN,No response received
+4985,CORRECT,INCORRECT: The drone layer is shifted — the road/driveway visible near the top‑left of the ortho does not line up with Howard Gap Road on the streets basemap (and the same offset is visible against the satellite road/curve).
+4838,UNCERTAIN,No response received
+5088,UNCERTAIN,No response received
+5243,UNCERTAIN,No response received
+5092,UNCERTAIN,No response received
+5303,CORRECT,INCORRECT: the drone mosaic is visibly offset—the dashed boundary/streets basemap and the satellite pixels do not align with the drone imagery (the layers are shifted relative to each other).
+559,CORRECT,CORRECT: The drone imagery is well aligned with the basemap — the curved trail and small turnaround loop line up with the dashed track on the streets layer and the tree/field boundary matches the satellite layer.
+5496,UNCERTAIN,No response received
+5778,CORRECT,INCORRECT: The drone layer is offset — the visible curved dirt road and intersection in the ortho image are clearly shifted east of
+5572,UNCERTAIN,No response received
+5782,UNCERTAIN,No response received
+608,CORRECT,"CORRECT: the drone imagery roads and trail intersections (notably the curved road at the lower-right and the clearing/intersection at the top-left) align with the dashed paths on the streets basemap, and the tree/field boundaries also match the satellite layer."
+5929,UNCERTAIN,No response received
+6384,CORRECT,"INCORRECT: I cannot confirm alignment because the streets and satellite basemaps contain no visible roads or features to match against the drone layer, so georeferencing is uncertain."
+621,UNCERTAIN,No response received
+6386,UNCERTAIN,No response received
+6395,CORRECT,INCORRECT: the drone ortho is visibly shifted/rotated relative to the basemap — the drone shoreline and internal tracks do not line up with the basemap water boundary or the underlying satellite pixels.
+6390,UNCERTAIN,No response received
+6393,UNCERTAIN,No response received
+6434,UNCERTAIN,No response received
+6458,UNCERTAIN,No response received
+6480,UNCERTAIN,No response received
+6779,CORRECT,"CORRECT: The drone imagery lines up with the streets basemap — the dark perimeter road and footpath intersections match precisely, and field/tree boundaries also align with the satellite layer."
+6602,UNCERTAIN,No response received
+6731,UNCERTAIN,No response received
+6936,CORRECT,INCORRECT: The aerial tiles are offset from the basemap—road centerline runs through the gap between the two drone strips (streets in the basemap do not match road/feature positions in the drone imagery).
+6929,CORRECT,"INCORRECT: The drone layer is offset—coastal road/parking and building edges in the ortho_streets image do not sit on the basemap road, and field boundaries in the ortho_satellite view are visibly shifted relative to the satellite imagery."
+70,CORRECT,"CORRECT: The drone mosaic is well-aligned — the small road/path at the southwest corner and the dashed trail at the north match the streets basemap, and tree boundaries line up with the satellite layer."
+6924,UNCERTAIN,No response received
+7236,UNCERTAIN,No response received
+7326,CORRECT,"CORRECT: Road edges and intersections in the drone layer line up with the streets basemap and building footprints, and natural boundaries (fields/shoreline) also match the satellite layer, indicating the drone imagery is properly georeferenced."
+7374,CORRECT,INCORRECT: the drone layer is shifted east relative to the streets basemap—the mapped road and waterline sit left of where those features appear in the aerial imagery and do not align.
+7479,CORRECT,"CORRECT: Road edges and intersections — notably Cap-de-Ville Road and the curved coastal junctions — line up with the streets basemap, and the shoreline and field boundaries also align with the satellite layer."
+7844,CORRECT,INCORRECT: The drone mosaic is rotated/shifted — the coastal highway and intersections around the large sports/cricket field and distillery area in the drone layer do not line up with the streets basemap.
+7676,UNCERTAIN,No response received
+7893,UNCERTAIN,No response received

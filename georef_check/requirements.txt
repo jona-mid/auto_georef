@@ -13,5 +13,6 @@ playwright
 torch
 torchvision
 git+https://github.com/cvg/LightGlue.git
+tabulate
 # Optional: faster Hugging Face downloads (pip install hf_xet)
 # On Windows, symlink warning is disabled in code (HF_HUB_DISABLE_SYMLINKS_WARNING=1)

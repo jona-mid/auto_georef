@@ -6,16 +6,16 @@ This directory contains the default runtime configuration for the georeferencing
 
 ```bash
 # Use default config
-python main.py check --input data/raw/dataset_custom
+python georef_check/main.py check --input georef_check/data/raw/dataset_manual
 
 # Override specific config values via CLI
-python main.py check --input data/raw/dataset_custom --threshold 0.15
+python georef_check/main.py check --input georef_check/data/raw/dataset_manual --threshold 0.15
 
 # Use custom config file
-python main.py check --config configs/my_config.yaml --input data/raw/dataset_custom
+python georef_check/main.py check --config configs/my_config.yaml --input georef_check/data/raw/dataset_manual
 
 # CLI flags override config values
-python main.py check --config configs/georef_check.yaml --threshold 0.20
+python georef_check/main.py check --config configs/georef_check.yaml --threshold 0.20
 ```
 
 ## Configuration Fields
@@ -24,8 +24,8 @@ python main.py check --config configs/georef_check.yaml --threshold 0.20
 
 | Field | Type | Description | Default |
 |-------|------|-------------|---------|
-| `dataset_dir` | string | Directory containing the 4-state ortho images | `data/raw/dataset_custom` |
-| `labels_csv` | string | Path to labels.csv file | `data/raw/dataset_custom/labels.csv` |
+| `dataset_dir` | string | Directory containing the 4-state ortho images | `data/raw/dataset_manual` |
+| `labels_csv` | string | Path to labels.csv file | `data/raw/dataset_manual/labels.csv` |
 | `split_csv` | string | Path to train_test_split.csv | `data/processed/train_test_split.csv` |
 
 ### Processing Options
@@ -82,35 +82,35 @@ python main.py check --config configs/georef_check.yaml --threshold 0.20
 ### Extract features with default config
 
 ```bash
-python main.py features \
-  --input-dir data/raw/dataset_custom \
-  --split-file data/processed/train_test_split.csv \
-  --output data/processed/features.csv
+python georef_check/main.py features \
+  --input-dir georef_check/data/raw/dataset_manual \
+  --split-file georef_check/data/processed/train_test_split.csv \
+  --output georef_check/data/processed/features.csv
 ```
 
 ### Train with threshold-only mode
 
 ```bash
-python main.py train \
-  --data data/processed/features.csv \
+python georef_check/main.py train \
+  --data georef_check/data/processed/features.csv \
   --threshold-only \
-  --eval-output data/processed/eval_metrics.json
+  --eval-output georef_check/data/processed/eval_metrics.json
 ```
 
 ### Check georeferencing using threshold mode
 
 ```bash
-python main.py check \
-  --input data/raw/dataset_custom \
+python georef_check/main.py check \
+  --input georef_check/data/raw/dataset_manual \
   --threshold 0.10
 ```
 
 ### Check with trained classifier
 
 ```bash
-python main.py check \
-  --input data/raw/dataset_custom \
-  --model data/models/classifier.pkl \
+python georef_check/main.py check \
+  --input georef_check/data/raw/dataset_manual \
+  --model georef_check/data/models/classifier.pkl \
   --mode classifier
 ```
 

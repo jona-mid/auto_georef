@@ -45,3 +45,17 @@
 7374,CORRECT,"CORRECT: The drone orthomosaic aligns well with the satellite basemap, especially along the river/vegetation corridor and adjacent field boundaries, with no obvious overall shift or rotation."
 7893,CORRECT,"CORRECT: The drone orthomosaic aligns well with the satellite basemap, with fixed features like the long building, road edges, and parking lots matching in position (differences are mainly due to scene changes/construction)."
 7479,CORRECT,"CORRECT: The coastline, road network, and built-up blocks in the drone ortho align well with the streets and satellite basemaps with no obvious lateral shift."
+4035,CORRECT,INCORRECT: The drone ortho’s main north–south road and the central intersection are shifted east of the streets basemap/satellite road positions (the basemap road runs along the left side while the ortho places it nearer the center).
+4892,UNCERTAIN,No response received
+4838,UNCERTAIN,No response received
+1899,UNCERTAIN,No response received
+6393,CORRECT,"INCORRECT: The streets basemap shows no road network or intersections in this view, so the drone layer cannot be verified against clear alignment cues (no matching streets/edges to confirm georeferencing)."
+5929,UNCERTAIN,No response received
+6395,CORRECT,"INCORRECT: The streets basemap shows no road features and the satellite backdrop is too coarse to match any distinct boundaries, so the drone imagery’s alignment cannot be confidently verified."
+6390,UNCERTAIN,No response received
+6602,UNCERTAIN,No response received
+6480,UNCERTAIN,No response received
+6434,UNCERTAIN,No response received
+7326,UNCERTAIN,No response received
+7844,CORRECT,"INCORRECT: The drone orthomosaic is visibly rotated and offset relative to the streets basemap (roads/intersections on the basemap do not line up with the road network in the drone imagery), and the same rotation/shift is apparent against the satellite imagery."
+7676,UNCERTAIN,No response received

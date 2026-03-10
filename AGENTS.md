@@ -16,30 +16,30 @@ Automated system to detect misaligned/georeferenced orthoimages by comparing the
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| Project structure | ✅ Complete | `georef_check/` directory with archive/ |
-| Custom scraper | ✅ Working | `scrape_custom.py` captures 4 states per ortho |
-| Windows Python env | ✅ Complete | `.venv-windows/` configured |
-| Training data | ✅ 83 samples | `data/raw/dataset_custom/` + `train_test_split.csv` |
+| Project structure | ✅ Complete | `georef_check/` directory with modules in `src/` |
+| Custom scraper | ✅ Working | `src/data_collection/scraper.py` (main scraper) captures 4 states per ortho |
+| Windows Python env | ✅ Complete | `.venv` configured with all deps (including `transformers`) |
+| Training data | ✅ 60 samples | `data/raw/dataset_manual/` (approx. 42 good, 18 bad) |
 | Labels | ✅ Complete | `labels.csv` populated |
-| Train/test split | ✅ Complete | `train_test_split.csv` (60 train, 17 test) |
-| Feature extraction | ✅ Complete | SuperPoint+LightGlue in `matching.py` |
-| Threshold eval | ✅ Complete | Best threshold 0.10, test acc ~0.94 |
+| Train/test split | ✅ Complete | `train_test_split.csv` (51 train, 9 test) |
+| Feature extraction | ✅ Complete | SuperPoint+LightGlue in `matching.py` with 1000x1000 cropping |
+| Threshold eval | ✅ Complete | Evaluated on manual dataset (production threshold chosen: 0.05) |
+| Classifier (XGBoost) | ⚠️ Tried | Trained but showed overfitting; threshold-only baseline outperformed on test set |
 | Check command | ✅ Working | Returns `good_probability` |
 
 ### Current Outputs (already run)
 
 | Output | Description |
 |--------|-------------|
-| `data/processed/features.csv` | 81 samples, streets + satellite |
-| `data/processed/features_satellite_only.csv` | 80 samples, satellite only |
-| `data/processed/eval_metrics.json` | Threshold-only eval (threshold 0.10, test acc ~0.94) |
-| `data/processed/eval_metrics_satellite_only.json` | Satellite-only eval (threshold 0.10, test acc ~0.82) |
+| `data/processed/features.csv` | 60 samples from manual dataset, center-cropped |
+| `data/processed/eval_metrics.json` | Threshold-only eval on manual dataset |
+| `data/processed/threshold_eval.json` | Full threshold sweep results (baseline vs XGBoost) |
 
 ### Remaining Gaps
 
-- **Threshold**: Production threshold not fixed (currently 0.10 from F1 optimization)
-- **More bad examples**: Only 6 bad vs 74+ good - need more labeled misaligned orthos
-- **Classifier**: Not trained yet (only threshold-based evaluation run)
+- **Production Threshold**: Set to `0.05` (updated in `configs/georef_check.yaml`) — consider re-evaluating after more data
+- **More bad examples**: Current minority class (~18) is small; collect more misaligned orthos to reduce overfitting risk
+- **Investigate failures**: Several samples have 0 inliers or high reprojection error; inspect these ortho IDs for labeling or matching issues
 
 ### Files Structure
 
@@ -62,7 +62,7 @@ georef_check/
 ├── build_train_test_split.py        # Build train/test split from labeled data
 ├── gen_labels.py                    # Helper to regenerate labels.csv
 ├── data/
-│   ├── raw/dataset_custom/          # ✅ Current dataset
+│   ├── raw/dataset_manual/          # ✅ Current dataset
 │   │   ├── {id}_ortho_streets.png   # Drone ON + Streets
 │   │   ├── {id}_ortho_satellite.png # Drone ON + Satellite
 │   │   ├── {id}_streets_only.png    # Drone OFF + Streets
@@ -109,6 +109,20 @@ The system compares **4 images** for each ortho:
 
 If ortho is misaligned, the matching will produce fewer inliers and higher reprojection error.
 
+### Phase Correlation Pre-filter (new)
+
+A fast, CPU‑friendly phase‑correlation prefilter has been added under `src/features/phase_correlation.py`.
+- Purpose: quickly estimate a translation (dx, dy) and a PSR (peak‑to‑sidelobe ratio) on Canny edge maps to provide a cheap `good_probability` proxy.
+- Usage: run the evaluation script `scripts/pc_check.py eval` to compute PC metrics across the labeled dataset and optionally fit a calibrator with `scripts/pc_check.py calibrate`.
+- Best practice: treat PC as a conservative gate—accept only when PSR is high and shift is small; otherwise fallback to the existing SuperPoint+LightGlue matcher for a robust decision.
+
+Files added:
+- `src/features/phase_correlation.py` — FFT phase correlation and edge variant
+- `scripts/pc_check.py` — evaluate and calibrate PC on `data/raw/dataset_manual`
+- `data/models/pc_calibrator.pkl` (when you run `calibrate`) — logistic calibrator mapping (psr,disp) → probability
+
+Note: Images are center-cropped to 1000x1000 during loading (see `src/features/matching.py`).
+
 ## Data Collection Workflow
 
 ### Overview
@@ -133,7 +147,7 @@ If ortho is misaligned, the matching will produce fewer inliers and higher repro
 │  • Skip invalid IDs automatically                           │
 │  • Wait 15s for first satellite imagery to load             │
 │  • Wait 5s for second satellite (tiles already loaded)      │
-│  • Output: data/raw/dataset_custom/*.png + metadata.json    │
+│  • Output: data/raw/dataset_manual/*.png + metadata.json    │
 └─────────────────────────────────────────────────────────────┘
 
 ### Important Clarifications
@@ -146,7 +160,7 @@ If ortho is misaligned, the matching will produce fewer inliers and higher repro
 
 ### Labels Format (CSV)
 
-Edit `data/raw/dataset_custom/labels.csv`:
+Edit `data/raw/dataset_manual/labels.csv`:
 
 ```csv
 ortho_id,label
@@ -156,8 +170,8 @@ ortho_id,label
 ...
 ```
 
-- `label=1`: Ortho is correctly aligned on the map
-- `label=0`: Ortho is misaligned/shifted
+   - `label=1`: Ortho is correctly aligned on the map
+   - `label=0`: Ortho is misaligned/shifted
 
 ## Running on Windows
 
@@ -205,14 +219,13 @@ playwright install chromium
 ### Step 1: Scrape
 
 ```powershell
-# Scrape custom orthos with 4 states each
-python scrape_custom.py --count 50
+# Scrape orthos (collect GeoTIFFs -> viewports)
+python georef_check/main.py collect --input-dir <path-to-geotiffs> --output-dir georef_check/data/raw/dataset_manual --n-images 50
 
 # Options:
-# --min-id 1       # Minimum dataset ID to sample from
-# --max-id 8000    # Maximum dataset ID to sample from
-# --count 50       # Number of datasets to capture
-# --headless       # Run without browser window (for production)
+# --input-dir <path-to-geotiffs>  # Directory containing GeoTIFFs
+# --output-dir <output dir>       # Where to write viewports (default: data/raw)
+# --n-images 50                   # Number of images to process
 ```
 
 **What the scraper does:**
@@ -226,7 +239,7 @@ python scrape_custom.py --count 50
    - `{id}_streets_only.png` - Drone OFF + Streets basemap
    - `{id}_satellite_only.png` - Drone OFF + Satellite imagery (waits 15s)
 6. Skip invalid IDs automatically
-7. Save to `data/raw/dataset_custom/`
+7. Save to `data/raw/dataset_manual/`
 
 **UI Elements (Ant Design components):**
 ```python
@@ -246,7 +259,7 @@ python scrape_custom.py --count 50
 
 ### Step 2: Label (Manual)
 
-1. Open `data/raw/dataset_custom/labels.csv`
+1. Open `data/raw/dataset_manual/labels.csv`
 2. For each ortho_id in the file:
    - Open `{id}_ortho_streets.png` and `{id}_streets_only.png`
    - Check if drone imagery aligns correctly with streets basemap
@@ -258,14 +271,14 @@ python scrape_custom.py --count 50
 
 ```powershell
 # Extract features from 4-state images using split file
-python main.py features --input-dir data/raw/dataset_custom --split-file data/processed/train_test_split.csv --output data/processed/features.csv
+python georef_check/main.py features --input-dir georef_check/data/raw/dataset_manual --split-file georef_check/data/processed/train_test_split.csv --output georef_check/data/processed/features.csv
 ```
 
 ### Step 4: Train Classifier
 
 ```powershell
 # Train XGBoost on extracted features
-python main.py train --data data/processed/features.csv --output data/models/classifier.pkl
+python georef_check/main.py train --data georef_check/data/processed/features.csv --output georef_check/data/models/classifier.pkl
 ```
 
 ## Feature Extraction Details (Legacy - needs update)
@@ -301,20 +314,20 @@ THRESHOLD = 0.5          # Classification threshold
 ## CLI Commands (Reference)
 
 ```bash
-# Scrape custom orthos (4 states each)
-python scrape_custom.py --count 50
+# Scrape orthos (collect GeoTIFFs -> viewports)
+python georef_check/main.py collect --input-dir <path-to-geotiffs> --output-dir georef_check/data/raw/dataset_manual --n-images 50
 
 # Build train/test split from labeled data
-python build_train_test_split.py
+python georef_check/src/training/build_split.py --labels georef_check/data/raw/dataset_manual/labels.csv --output georef_check/data/processed/train_test_split.csv
 
 # Extract features (with split file - uses train/test split)
-python main.py features --input-dir data/raw/dataset_custom --split-file data/processed/train_test_split.csv --output data/processed/features.csv
+python georef_check/main.py features --input-dir georef_check/data/raw/dataset_manual --split-file georef_check/data/processed/train_test_split.csv --output georef_check/data/processed/features.csv
 
 # Train classifier
-python main.py train --data data/processed/features.csv --output data/models/classifier.pkl
+python georef_check/main.py train --data georef_check/data/processed/features.csv --output georef_check/data/models/classifier.pkl
 
 # Check georeferencing (returns good_probability)
-python main.py check --input data/raw/dataset_custom
+python georef_check/main.py check --input georef_check/data/raw/dataset_manual
 ```
 
 ## Deadtrees.earth UI Reference
@@ -351,7 +364,7 @@ python main.py check --input data/raw/dataset_custom
 
 | File | Status | Description |
 |------|--------|-------------|
-| scrape_custom.py | ✅ Active | Main scraper - 4 states per ortho, includes missing tile detection |
+| src/data_collection/scraper.py | ✅ Active | Main scraper - 4 states per ortho, includes missing tile detection |
 | build_train_test_split.py | ✅ Helper | Build train/test split from labeled data |
 | archive/ | 📁 Archived | Deprecated code (scrapers, test scripts, old docs) |
 | gen_labels.py | ✅ Helper | Regenerate labels.csv |
@@ -365,12 +378,12 @@ python main.py check --input data/raw/dataset_custom
 - Non-headless mode recommended for debugging scraper issues
 - **Missing tile detection**: Satellites images are checked for >50% uniform pixels; failed datasets are discarded immediately
 - **Fail-fast**: If satellite tiles fail to load, the dataset is skipped without retries, saving time
-- Current dataset: 83 samples (60 train, 17 test) in data/raw/dataset_custom/
+-- Current dataset: 60 samples (51 train, 9 test) in data/raw/dataset_manual/
 
 ## Next Steps
 
-1. **Manual labeling** (USER) - Populate labels.csv with 1/0 labels
-2. **Build train/test split** - Run `python build_train_test_split.py` after labeling
-3. **Extract features** - Run feature extraction with split file
-4. **Train classifier** - XGBoost on extracted features
-5. **Evaluate model** - Test on validation set
+1. **Deploy threshold baseline** (recommended): use `threshold: 0.05` in `configs/georef_check.yaml` for production checks.
+2. **Inspect failing ortho IDs**: review samples with 0 inliers or high reprojection error (see `data/processed/features.csv`) and confirm labels.
+3. **Collect more negatives**: add more misaligned examples to improve classifier training (aim for 100+ samples before retraining XGBoost).
+4. **Re-run threshold sweep** after additional data to re-evaluate whether a classifier outperforms the baseline.
+5. **Integrate PC prefilter**: wire PC into `src/inference/pipeline.py` as a conservative gate and add PSR/disp as features to `data/processed/features.csv` for classifier retraining.

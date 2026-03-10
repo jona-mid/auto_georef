@@ -45,3 +45,17 @@
 6929,UNCERTAIN,No response received
 7479,CORRECT,"CORRECT: The drone imagery is well aligned — the coastline, roads and building footprints in the ortho layer match the underlying street and satellite basemaps."
 7893,CORRECT,"INCORRECT: The circular drone ortho is visibly shifted/rotated relative to the basemap — roads, paths and building footprints in the drone image do not line up with the underlying streets/satellite imagery."
+4035,CORRECT,"CORRECT: Road centerline and intersections in the drone layer line up with the streets basemap (and treelines/field edges match the satellite imagery), indicating the drone imagery is well georeferenced."
+4892,UNCERTAIN,No response received
+1899,CORRECT,INCORRECT: The drone layer is offset—the driveway/road and hotel/building footprints in the drone imagery are shifted left/west and do not line up with the streets basemap (and similarly misaligned against the satellite layer).
+4838,UNCERTAIN,No response received
+6393,CORRECT,INCORRECT: The drone mosaic is shifted — dirt tracks and field edges in the drone layer do not line up with the basemap streets/water polygons (blue water features are visibly offset relative to the drone imagery).
+5929,UNCERTAIN,No response received
+6395,CORRECT,INCORRECT: the drone mosaic is misaligned — its shoreline and
+6390,UNCERTAIN,No response received
+6434,CORRECT,INCORRECT: The drone layer is misaligned — the internal dirt road and building cluster in the drone imagery are visibly shifted/rotated and do not line up with the basemap white road (and the same offset appears against the satellite natural features).
+6480,CORRECT,INCORRECT: The drone layer is offset — dirt road edges and the small intersection/loop near the top center do not line up with the streets basemap (the drone roads are visibly shifted a few meters).
+6602,UNCERTAIN,No response received
+7676,UNCERTAIN,No response received
+7326,UNCERTAIN,No response received
+7844,CORRECT,INCORRECT: The drone strip is visibly offset (shifted west) — the coastal road and rectangular sports field/road intersections in the drone imagery do not line up with the streets/satellite basemap.

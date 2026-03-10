@@ -2,8 +2,8 @@
 # This is the default runtime configuration. CLI flags override these values.
 
 # Data paths
-dataset_dir: data/raw/dataset_custom
-labels_csv: data/raw/dataset_custom/labels.csv
+dataset_dir: data/raw/dataset_manual
+labels_csv: data/raw/dataset_manual/labels.csv
 split_csv: data/processed/train_test_split.csv
 
 # Processing options

@@ -148,6 +148,58 @@ def main():
     )
     check_parser.add_argument("--output", type=str, help="Output JSON file")
 
+    phase_parser = subparsers.add_parser(
+        "phase-check", help="Check georeferencing using FFT phase correlation"
+    )
+    phase_parser.add_argument(
+        "--input",
+        type=str,
+        required=True,
+        help="Directory with 4-state PNGs",
+    )
+    phase_parser.add_argument(
+        "--basemap",
+        type=str,
+        default="both",
+        choices=["both", "streets", "satellite"],
+        help="Which basemap to use (default: both)",
+    )
+    phase_parser.add_argument(
+        "--use-edges",
+        action="store_true",
+        help="Run phase correlation on Canny edge images instead of raw grayscale",
+    )
+    phase_parser.add_argument(
+        "--output",
+        type=str,
+        default="outputs/phase_check_results.json",
+        help="Path for JSON results file (default: outputs/phase_check_results.json)",
+    )
+    phase_parser.add_argument(
+        "--psr-min",
+        type=float,
+        default=3.0,
+        help="PSR threshold below which result is unreliable (default: 3.0)",
+    )
+    phase_parser.add_argument(
+        "--psr-good",
+        type=float,
+        default=8.0,
+        help="PSR threshold above which full PSR score is given (default: 8.0)",
+    )
+    phase_parser.add_argument(
+        "--shift-good",
+        type=float,
+        default=5.0,
+        help="Shift threshold in pixels below which full shift score is given (default: 5.0)",
+    )
+    phase_parser.add_argument(
+        "--shift-max",
+        type=float,
+        default=50.0,
+        help="Shift threshold in pixels above which shift score is 0 (default: 50.0)",
+    )
+
     args = parser.parse_args()
 
     # Load config if provided
@@ -206,7 +258,7 @@ def main():
         if input_dir:
             input_dir = Path(input_dir)
         else:
-            input_dir = Path("data/raw/dataset_custom")  # fallback
+            input_dir = Path("data/raw/dataset_manual")  # fallback
         labels_path = resolve_arg("labels", "labels_csv")
         split_file = resolve_arg("split_file", "split_csv")
         output_path = resolve_arg(
@@ -711,6 +763,145 @@ def main():
         else:
             for r in results:
                 print(json.dumps(r))
+
+    elif args.command == "phase-check":
+        import json
+        from tabulate import tabulate
+
+        input_path = Path(args.input)
+        if not input_path.exists():
+            print(f"Input directory not found: {input_path}")
+            sys.exit(1)
+
+        use_edges = getattr(args, "use_edges", False)
+        basemap = getattr(args, "basemap", "both")
+        output_path = getattr(args, "output", "outputs/phase_check_results.json")
+
+        psr_min = getattr(args, "psr_min", 3.0)
+        psr_good = getattr(args, "psr_good", 8.0)
+        shift_good = getattr(args, "shift_good", 5.0)
+        shift_max = getattr(args, "shift_max", 50.0)
+
+        ortho_streets_files = list(input_path.glob("*_ortho_streets.png"))
+        ortho_ids = []
+        for f in ortho_streets_files:
+            oid = f.stem.replace("_ortho_streets", "")
+            streets_only_p = input_path / f"{oid}_streets_only.png"
+            ortho_sat_p = input_path / f"{oid}_ortho_satellite.png"
+            satellite_only_p = input_path / f"{oid}_satellite_only.png"
+            if (
+                streets_only_p.exists()
+                and ortho_sat_p.exists()
+                and satellite_only_p.exists()
+            ):
+                ortho_ids.append(
+                    (
+                        oid,
+                        str(f),
+                        str(streets_only_p),
+                        str(ortho_sat_p),
+                        str(satellite_only_p),
+                    )
+                )
+
+        if not ortho_ids:
+            print("No valid ortho images found!")
+            sys.exit(1)
+
+        from src.features.phase_correlation import check_georeferencing_phase
+
+        results = []
+        skipped = 0
+
+        for oid, ortho_str, streets_only, ortho_sat, sat_only in ortho_ids:
+            try:
+                res = check_georeferencing_phase(
+                    ortho_streets_path=ortho_str
+                    if basemap in ("both", "streets")
+                    else None,
+                    streets_only_path=streets_only
+                    if basemap in ("both", "streets")
+                    else None,
+                    ortho_satellite_path=ortho_sat
+                    if basemap in ("both", "satellite")
+                    else None,
+                    satellite_only_path=sat_only
+                    if basemap in ("both", "satellite")
+                    else None,
+                    basemap=basemap,
+                    use_edges=use_edges,
+                    psr_min=psr_min,
+                    psr_good=psr_good,
+                    shift_good=shift_good,
+                    shift_max=shift_max,
+                )
+                result_entry = {
+                    "ortho_id": oid,
+                    "combined_good_probability": res["combined_good_probability"],
+                }
+                if "streets" in res:
+                    result_entry["dx_streets"] = res["streets"]["dx"]
+                    result_entry["dy_streets"] = res["streets"]["dy"]
+                    result_entry["psr_streets"] = res["streets"][
+                        "peak_to_sidelobe_ratio"
+                    ]
+                if "satellite" in res:
+                    result_entry["dx_satellite"] = res["satellite"]["dx"]
+                    result_entry["dy_satellite"] = res["satellite"]["dy"]
+                    result_entry["psr_satellite"] = res["satellite"][
+                        "peak_to_sidelobe_ratio"
+                    ]
+                results.append(result_entry)
+            except Exception as e:
+                print(f"Warning: Error processing {oid}: {e}")
+                skipped += 1
+
+        if not results:
+            print("No results generated!")
+            sys.exit(1)
+
+        table_data = []
+        for r in results:
+            row = [
+                r["ortho_id"],
+                f"{r['combined_good_probability']:.3f}",
+            ]
+            if "dx_satellite" in r:
+                row.extend(
+                    [
+                        f"{r.get('dx_satellite', 0):.1f}",
+                        f"{r.get('dy_satellite', 0):.1f}",
+                        f"{r.get('psr_satellite', 0):.1f}",
+                    ]
+                )
+            else:
+                row.extend(["-", "-", "-"])
+            if "dx_streets" in r:
+                row.extend(
+                    [
+                        f"{r.get('dx_streets', 0):.1f}",
+                        f"{r.get('dy_streets', 0):.1f}",
+                        f"{r.get('psr_streets', 0):.1f}",
+                    ]
+                )
+            else:
+                row.extend(["-", "-", "-"])
+            table_data.append(row)
+
+        headers = ["ortho_id", "good_prob"]
+        if "dx_satellite" in results[0]:
+            headers.extend(["dx_sat", "dy_sat", "psr_sat"])
+        if "dx_streets" in results[0]:
+            headers.extend(["dx_str", "dy_str", "psr_str"])
+
+        print(f"\nPhase Correlation Results (n={len(results)}, skipped={skipped}):")
+        print(tabulate(table_data, headers=headers, tablefmt="simple"))
+
+        output_file = Path(output_path)
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_file, "w") as f:
+            json.dump(results, f, indent=2)
+        print(f"\nResults saved to: {output_file}")
 
     else:
         parser.print_help()

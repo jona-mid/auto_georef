@@ -1,0 +1,10 @@
+# Phase correlation defaults (edge-based)
+canny_low: 100
+canny_high: 200
+upsample_factor: 10
+psr_window: 11
+disp_scale_pixels: 20.0
+pc_threshold_high: 8.0
+pc_threshold_low: 2.0
+use_calibrator: false
+calibrator_path: data/models/pc_calibrator.pkl

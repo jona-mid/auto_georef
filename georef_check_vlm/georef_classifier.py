@@ -27,6 +27,14 @@ import pandas as pd
 import requests
 from PIL import Image
 
+# Load .env file if it exists
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
 import config
 
 Image.MAX_IMAGE_PIXELS = None
@@ -51,14 +59,23 @@ I will show you 4 images from the same geographic location:
 
 Task: Determine if the drone imagery is correctly georeferenced (aligned with the basemap).
 
-Look for:
-- Roads, buildings, and features in the drone image should align with the underlying basemap
-- If misaligned, the drone image will appear shifted or not match basemap features
+Method:
+- Compare image 1 vs 2: Do roads, intersections, and built features align?
+- Compare image 3 vs 4: Do natural features (trees, fields, water boundaries) align?
+- PRIORITIZE the streets comparison - road networks provide the clearest alignment cues.
+
+Signs of MISALIGNMENT:
+- Drone imagery appears shifted, rotated, or offset from basemap features
+- Roads in drone layer don't match road positions in basemap
+- Features that should overlap are visibly separated
+
+Signs of CORRECT alignment:
+- Road edges and intersections in drone layer match basemap exactly
+- Boundaries of fields, forests, water bodies align consistently
 
 Respond with ONLY one of:
-CORRECT: <brief 1-sentence explanation>
-INCORRECT: <brief 1-sentence explanation>
-UNCERTAIN: <brief 1-sentence explanation>"""
+CORRECT: <brief 1-sentence explanation referencing specific alignment>
+INCORRECT: <brief 1-sentence explanation referencing specific misalignment or if unsure>"""
 
 
 class GlobalRateLimiter:
@@ -115,8 +132,8 @@ def get_ortho_ids(data_dir):
     return sorted(ortho_ids)
 
 
-def load_images_to_base64(data_dir, ortho_id):
-    """Load all 4 images for an ortho and return as base64 list."""
+def load_images_to_base64(data_dir, ortho_id, target_size=1000):
+    """Load all 4 images for an ortho, crop to square, and return as base64 list."""
     suffixes = [
         "_ortho_streets.png",
         "_streets_only.png",
@@ -133,6 +150,16 @@ def load_images_to_base64(data_dir, ortho_id):
             with Image.open(path) as img:
                 if img.mode not in ("RGB", "RGBA"):
                     img = img.convert("RGB")
+
+                # Crop to square (center crop)
+                width, height = img.size
+                if width != target_size or height != target_size:
+                    left = (width - target_size) // 2
+                    top = (height - target_size) // 2
+                    right = left + target_size
+                    bottom = top + target_size
+                    img = img.crop((left, top, right, bottom))
+
                 buffer = BytesIO()
                 img.save(buffer, format="PNG")
                 img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")

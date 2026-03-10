@@ -548,3 +548,160 @@ Classification complete!
 Classification complete!
 2026-02-27 17:11:53,335 - INFO - Processed: 46 orthos
 2026-02-27 17:11:53,335 - INFO - Results saved to: georef_gpt_5.2.csv
+2026-03-09 19:11:16,970 - ERROR - No API key provided. Use --api-key or set OPENROUTER_API_KEY
+2026-03-09 19:11:49,943 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:11:49,951 - INFO - Loaded 46 existing results from georef_gemini_3_flash.csv
+2026-03-09 19:11:49,953 - INFO - Remaining to process: 14
+2026-03-09 19:11:49,953 - INFO - Running with 4 worker(s)
+2026-03-09 19:12:22,171 - INFO - [10/14] done (throughput=0.31 imgs/s)
+2026-03-09 19:12:22,177 - INFO - Progress saved to georef_gemini_3_flash.csv (56 entries)
+2026-03-09 19:12:39,826 - INFO - [14/14] done (throughput=0.28 imgs/s)
+2026-03-09 19:12:39,840 - INFO - Progress saved to georef_gemini_3_flash.csv (60 entries)
+2026-03-09 19:12:39,842 - INFO - Progress saved to georef_gemini_3_flash.csv (60 entries)
+2026-03-09 19:12:39,842 - INFO - 
+Classification complete!
+2026-03-09 19:12:39,842 - INFO - Processed: 14 orthos
+2026-03-09 19:12:39,842 - INFO - Results saved to: georef_gemini_3_flash.csv
+2026-03-09 19:13:03,624 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:13:03,629 - INFO - Loaded 46 existing results from georef_gpt_5_mini.csv
+2026-03-09 19:13:03,631 - INFO - Remaining to process: 14
+2026-03-09 19:13:03,631 - INFO - Running with 4 worker(s)
+2026-03-09 19:14:16,974 - INFO - [10/14] done (throughput=0.14 imgs/s)
+2026-03-09 19:14:16,980 - INFO - Progress saved to georef_gpt_5_mini.csv (56 entries)
+2026-03-09 19:14:40,010 - INFO - [14/14] done (throughput=0.15 imgs/s)
+2026-03-09 19:14:40,016 - INFO - Progress saved to georef_gpt_5_mini.csv (60 entries)
+2026-03-09 19:14:40,017 - INFO - Progress saved to georef_gpt_5_mini.csv (60 entries)
+2026-03-09 19:14:40,018 - INFO - 
+Classification complete!
+2026-03-09 19:14:40,018 - INFO - Processed: 14 orthos
+2026-03-09 19:14:40,018 - INFO - Results saved to: georef_gpt_5_mini.csv
+2026-03-09 19:14:51,709 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:14:51,709 - INFO - Remaining to process: 60
+2026-03-09 19:14:51,710 - INFO - Running with 10 worker(s)
+2026-03-09 19:15:17,352 - INFO - [10/60] done (throughput=0.39 imgs/s)
+2026-03-09 19:15:17,359 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (10 entries)
+2026-03-09 19:15:39,947 - INFO - [20/60] done (throughput=0.41 imgs/s)
+2026-03-09 19:15:39,951 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (20 entries)
+2026-03-09 19:15:57,922 - INFO - [30/60] done (throughput=0.45 imgs/s)
+2026-03-09 19:15:57,925 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (30 entries)
+2026-03-09 19:16:11,088 - INFO - [40/60] done (throughput=0.50 imgs/s)
+2026-03-09 19:16:11,093 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (40 entries)
+2026-03-09 19:16:31,295 - INFO - [50/60] done (throughput=0.50 imgs/s)
+2026-03-09 19:16:31,298 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (50 entries)
+2026-03-09 19:16:46,755 - INFO - [60/60] done (throughput=0.52 imgs/s)
+2026-03-09 19:16:46,758 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (60 entries)
+2026-03-09 19:16:46,763 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (60 entries)
+2026-03-09 19:16:46,764 - INFO - Progress saved to georef_gemini_3.1_flash_lite.csv (60 entries)
+2026-03-09 19:16:46,765 - INFO - 
+Classification complete!
+2026-03-09 19:16:46,765 - INFO - Processed: 60 orthos
+2026-03-09 19:16:46,765 - INFO - Results saved to: georef_gemini_3.1_flash_lite.csv
+2026-03-09 19:25:47,050 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:25:47,051 - INFO - Remaining to process: 60
+2026-03-09 19:25:47,051 - INFO - Running with 4 worker(s)
+2026-03-09 19:26:26,135 - INFO - [10/60] done (throughput=0.26 imgs/s)
+2026-03-09 19:26:26,143 - INFO - Progress saved to georef_gpt_5.4.csv (10 entries)
+2026-03-09 19:26:51,207 - INFO - [20/60] done (throughput=0.31 imgs/s)
+2026-03-09 19:26:51,210 - INFO - Progress saved to georef_gpt_5.4.csv (20 entries)
+2026-03-09 19:27:13,886 - INFO - [30/60] done (throughput=0.35 imgs/s)
+2026-03-09 19:27:13,889 - INFO - Progress saved to georef_gpt_5.4.csv (30 entries)
+2026-03-09 19:27:37,114 - INFO - [40/60] done (throughput=0.36 imgs/s)
+2026-03-09 19:27:37,118 - INFO - Progress saved to georef_gpt_5.4.csv (40 entries)
+2026-03-09 19:28:02,359 - INFO - [50/60] done (throughput=0.37 imgs/s)
+2026-03-09 19:28:02,363 - INFO - Progress saved to georef_gpt_5.4.csv (50 entries)
+2026-03-09 19:28:23,856 - INFO - [60/60] done (throughput=0.38 imgs/s)
+2026-03-09 19:28:23,860 - INFO - Progress saved to georef_gpt_5.4.csv (60 entries)
+2026-03-09 19:28:23,863 - INFO - Progress saved to georef_gpt_5.4.csv (60 entries)
+2026-03-09 19:28:23,865 - INFO - Progress saved to georef_gpt_5.4.csv (60 entries)
+2026-03-09 19:28:23,865 - INFO - 
+Classification complete!
+2026-03-09 19:28:23,865 - INFO - Processed: 60 orthos
+2026-03-09 19:28:23,866 - INFO - Results saved to: georef_gpt_5.4.csv
+2026-03-09 19:28:43,291 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:28:43,298 - INFO - Loaded 46 existing results from georef_gpt_5.2.csv
+2026-03-09 19:28:43,299 - INFO - Remaining to process: 14
+2026-03-09 19:28:43,299 - INFO - Running with 4 worker(s)
+2026-03-09 19:29:39,928 - INFO - [10/14] done (throughput=0.18 imgs/s)
+2026-03-09 19:29:39,933 - INFO - Progress saved to georef_gpt_5.2.csv (56 entries)
+2026-03-09 19:30:01,243 - INFO - [14/14] done (throughput=0.18 imgs/s)
+2026-03-09 19:30:01,248 - INFO - Progress saved to georef_gpt_5.2.csv (60 entries)
+2026-03-09 19:30:01,249 - INFO - Progress saved to georef_gpt_5.2.csv (60 entries)
+2026-03-09 19:30:01,250 - INFO - 
+Classification complete!
+2026-03-09 19:30:01,250 - INFO - Processed: 14 orthos
+2026-03-09 19:30:01,250 - INFO - Results saved to: georef_gpt_5.2.csv
+2026-03-09 19:36:14,154 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:36:14,155 - INFO - Remaining to process: 60
+2026-03-09 19:36:14,155 - INFO - Running with 12 worker(s)
+2026-03-09 19:36:36,471 - INFO - [10/60] done (throughput=0.45 imgs/s)
+2026-03-09 19:36:36,480 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (10 entries)
+2026-03-09 19:36:51,759 - INFO - [20/60] done (throughput=0.53 imgs/s)
+2026-03-09 19:36:51,762 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (20 entries)
+2026-03-09 19:37:00,716 - INFO - [30/60] done (throughput=0.64 imgs/s)
+2026-03-09 19:37:00,719 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (30 entries)
+2026-03-09 19:37:10,916 - INFO - [40/60] done (throughput=0.70 imgs/s)
+2026-03-09 19:37:10,920 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (40 entries)
+2026-03-09 19:37:26,258 - INFO - [50/60] done (throughput=0.69 imgs/s)
+2026-03-09 19:37:26,263 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (50 entries)
+2026-03-09 19:37:32,815 - INFO - [60/60] done (throughput=0.76 imgs/s)
+2026-03-09 19:37:32,818 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (60 entries)
+2026-03-09 19:37:32,824 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (60 entries)
+2026-03-09 19:37:32,826 - INFO - Progress saved to georef_gemini_3_flash_v2.csv (60 entries)
+2026-03-09 19:37:32,826 - INFO - 
+Classification complete!
+2026-03-09 19:37:32,826 - INFO - Processed: 60 orthos
+2026-03-09 19:37:32,826 - INFO - Results saved to: georef_gemini_3_flash_v2.csv
+2026-03-09 19:37:49,584 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:37:49,584 - INFO - Remaining to process: 60
+2026-03-09 19:37:49,584 - INFO - Running with 20 worker(s)
+2026-03-09 19:38:34,320 - INFO - [10/60] done (throughput=0.22 imgs/s)
+2026-03-09 19:38:34,337 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (10 entries)
+2026-03-09 19:38:40,515 - INFO - [20/60] done (throughput=0.39 imgs/s)
+2026-03-09 19:38:40,519 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (20 entries)
+2026-03-09 19:39:01,896 - INFO - [30/60] done (throughput=0.41 imgs/s)
+2026-03-09 19:39:01,899 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (30 entries)
+2026-03-09 19:39:12,042 - INFO - [40/60] done (throughput=0.49 imgs/s)
+2026-03-09 19:39:12,045 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (40 entries)
+2026-03-09 19:39:20,890 - INFO - [50/60] done (throughput=0.55 imgs/s)
+2026-03-09 19:39:20,894 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (50 entries)
+2026-03-09 19:39:37,806 - INFO - [60/60] done (throughput=0.55 imgs/s)
+2026-03-09 19:39:37,809 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:39:37,818 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:39:37,820 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:39:37,820 - INFO - 
+Classification complete!
+2026-03-09 19:39:37,820 - INFO - Processed: 60 orthos
+2026-03-09 19:39:37,820 - INFO - Results saved to: georef_gpt_5_mini_v2.csv
+2026-03-09 19:42:27,784 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:42:27,788 - INFO - Loaded 60 existing results from georef_gpt_5_mini_v2.csv
+2026-03-09 19:42:27,790 - INFO - Remaining to process: 0
+2026-03-09 19:42:27,790 - INFO - Nothing to do.
+2026-03-09 19:42:52,525 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:42:52,532 - INFO - Loaded 0 existing results from georef_gpt_5_mini_v2.csv
+2026-03-09 19:42:52,533 - INFO - Remaining to process: 60
+2026-03-09 19:42:52,533 - INFO - Running with 4 worker(s)
+2026-03-09 19:43:56,825 - INFO - [10/60] done (throughput=0.16 imgs/s)
+2026-03-09 19:43:56,832 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (10 entries)
+2026-03-09 19:45:42,195 - ERROR - No API key provided. Use --api-key or set OPENROUTER_API_KEY
+2026-03-09 19:46:00,619 - INFO - Found 60 orthos with complete image sets
+2026-03-09 19:46:00,622 - INFO - Loaded 0 existing results from georef_gpt_5_mini_v2.csv
+2026-03-09 19:46:00,624 - INFO - Remaining to process: 60
+2026-03-09 19:46:00,624 - INFO - Running with 4 worker(s)
+2026-03-09 19:47:28,730 - INFO - [10/60] done (throughput=0.11 imgs/s)
+2026-03-09 19:47:28,739 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (10 entries)
+2026-03-09 19:48:19,614 - INFO - [20/60] done (throughput=0.14 imgs/s)
+2026-03-09 19:48:19,617 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (20 entries)
+2026-03-09 19:49:06,957 - INFO - [30/60] done (throughput=0.16 imgs/s)
+2026-03-09 19:49:06,960 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (30 entries)
+2026-03-09 19:50:07,181 - INFO - [40/60] done (throughput=0.16 imgs/s)
+2026-03-09 19:50:07,184 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (40 entries)
+2026-03-09 19:51:00,464 - INFO - [50/60] done (throughput=0.17 imgs/s)
+2026-03-09 19:51:00,467 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (50 entries)
+2026-03-09 19:51:49,344 - INFO - [60/60] done (throughput=0.17 imgs/s)
+2026-03-09 19:51:49,347 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:51:49,350 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:51:49,352 - INFO - Progress saved to georef_gpt_5_mini_v2.csv (60 entries)
+2026-03-09 19:51:49,353 - INFO - 
+Classification complete!
+2026-03-09 19:51:49,353 - INFO - Processed: 60 orthos
+2026-03-09 19:51:49,353 - INFO - Results saved to: georef_gpt_5_mini_v2.csv

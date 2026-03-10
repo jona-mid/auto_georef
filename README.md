@@ -4,9 +4,9 @@ Automated system to detect misaligned/georeferenced orthoimages by comparing the
 
 ## Overview
 
-Given an ortho image and basemap image, determine if the ortho is properly georeferenced.
+Given an ortho image and basemap image, determine if the ortho is properly georeferenced at the same viewport.
 
- at the same viewport**Method**: SuperPoint + LightGlue for feature matching, then homography fitting with RANSAC to quantify alignment quality.
+Method: SuperPoint + LightGlue for feature matching, then homography fitting with RANSAC to quantify alignment quality.
 
 **Output**: `{"good_probability": 0.85}` - probability that ortho is correctly aligned.
 
@@ -20,13 +20,13 @@ pip install -r georef_check/requirements.txt
 playwright install chromium
 
 # 2. Scrape data
-python georef_check/scrape_custom.py --count 50
+python georef_check/main.py collect --input-dir <path-to-geotiffs> --output-dir georef_check/data/raw/dataset_manual --n-images 50
 
 # 3. Label data (manual)
-# Edit georef_check/data/raw/dataset_custom/labels.csv with 1 (good) or 0 (bad)
+# Edit georef_check/data/raw/dataset_manual/labels.csv with 1 (good) or 0 (bad)
 
 # 4. Build train/test split
-python georef_check/build_train_test_split.py
+python georef_check/src/training/build_split.py --labels georef_check/data/raw/dataset_manual/labels.csv --output georef_check/data/processed/train_test_split.csv
 
 # 5. Extract features (config-driven)
 python georef_check/main.py features --config georef_check/configs/georef_check.yaml
@@ -35,7 +35,7 @@ python georef_check/main.py features --config georef_check/configs/georef_check.
 python georef_check/main.py train --config georef_check/configs/georef_check.yaml --threshold-only
 
 # 7. Check georeferencing
-python georef_check/main.py check --config georef_check/configs/georef_check.yaml --input georef_check/data/raw/dataset_custom
+python georef_check/main.py check --config georef_check/configs/georef_check.yaml --input georef_check/data/raw/dataset_manual
 ```
 
 ## How It Works
@@ -60,6 +60,27 @@ The system compares **4 images** for each ortho:
 
 If ortho is misaligned, the matching will produce fewer inliers and higher reprojection error.
 
+### Phase Correlation Pre-filter (edge-based)
+
+A lightweight FFT phase correlation prefilter is provided in `src/features/phase_correlation.py`.
+- Purpose: fast, unsupervised estimate of translation (`dx, dy`) and a PSR (peak‑to‑sidelobe ratio) computed on Canny edge images.
+- Recommended use: run as a conservative gate — accept only when PSR is high and displacement is small; otherwise fall back to the `SuperPoint+LightGlue` matcher for a robust decision.
+- Tools: `scripts/pc_check.py` evaluates PC performance on the labeled dataset and can fit/save a calibrator at `data/models/pc_calibrator.pkl`.
+
+Quick PC evaluation:
+
+```powershell
+python scripts/pc_check.py eval --dataset data/raw/dataset_manual --labels data/raw/dataset_manual/labels.csv --out data/processed/pc_eval.json
+```
+
+Fit calibrator:
+
+```powershell
+python scripts/pc_check.py calibrate --dataset data/raw/dataset_manual --labels data/raw/dataset_manual/labels.csv --output data/models/pc_calibrator.pkl
+```
+
+Notes: PC alone is a weak standalone classifier on this small, cross‑domain dataset. Use as prefilter or feature input to your classifier.
+
 ## Project Structure
 
 ```
@@ -70,17 +91,18 @@ georef_check/
 ├── configs/
 │   ├── georef_check.yaml        # Default runtime config
 │   └── README.md                # Config documentation
-├── scrape_custom.py             # Web scraper
-├── requirements.txt              # Dependencies
+├── src/
+│   └── data_collection/scraper.py # Web scraper (Playwright/Playwright helpers)
+├── requirements.txt             # Dependencies
 ├── outputs/                     # Per-run inference outputs
 ├── data/
-│   ├── raw/dataset_custom/      # Training data (4 images per ortho)
+│   ├── raw/dataset_manual/      # Training data (4 images per ortho)
 │   ├── processed/               # Features CSVs, eval metrics
-│   └── models/                  # Trained classifiers, manifests
++│   └── models/                  # Trained classifiers, manifests
 └── src/
-    ├── features/matching.py     # SuperPoint+LightGlue matching
-    ├── training/                # XGBoost classifier training
-    └── inference/               # End-to-end inference pipeline
+  ├── features/matching.py     # SuperPoint+LightGlue matching
+  ├── training/                # XGBoost classifier training
+  └── inference/               # End-to-end inference pipeline
 ```
 
 ## Configuration
@@ -91,8 +113,8 @@ Edit `configs/georef_check.yaml`:
 
 ```yaml
 # Data
-dataset_dir: data/raw/dataset_custom
-labels_csv: data/raw/dataset_custom/labels.csv
+dataset_dir: data/raw/dataset_manual
+labels_csv: data/raw/dataset_manual/labels.csv
 split_csv: data/processed/train_test_split.csv
 
 # Processing
@@ -118,16 +140,18 @@ predict_output_dir: outputs/check_results
 
 See `configs/README.md` for full documentation.
 
+Production threshold: 0.10 (chosen from `data/processed/threshold_eval.json`; see `data/processed/threshold_eval.json` for full sweep results)
+
 ### CLI Override
 
 CLI flags override config values:
 
 ```bash
 # Use config but override threshold
-python main.py check --config configs/georef_check.yaml --threshold 0.15
+python georef_check/main.py check --config configs/georef_check.yaml --threshold 0.15
 
 # Use default config (auto-loaded)
-python main.py check --input data/raw/dataset_custom --threshold 0.15
+python georef_check/main.py check --input georef_check/data/raw/dataset_manual --threshold 0.15
 ```
 
 ## Usage
@@ -135,42 +159,42 @@ python main.py check --input data/raw/dataset_custom --threshold 0.15
 ### Extract Features
 
 ```bash
-python main.py features \
-  --input-dir data/raw/dataset_custom \
-  --split-file data/processed/train_test_split.csv \
-  --output data/processed/features.csv
+python georef_check/main.py features \
+  --input-dir georef_check/data/raw/dataset_manual \
+  --split-file georef_check/data/processed/train_test_split.csv \
+  --output georef_check/data/processed/features.csv
 ```
 
 ### Train (Threshold-Only Mode)
 
 ```bash
-python main.py train \
-  --data data/processed/features.csv \
+python georef_check/main.py train \
+  --data georef_check/data/processed/features.csv \
   --threshold-only \
-  --eval-output data/processed/eval_metrics.json
+  --eval-output georef_check/data/processed/eval_metrics.json
 ```
 
 ### Train (Classifier Mode)
 
 ```bash
-python main.py train \
-  --data data/processed/features.csv \
+python georef_check/main.py train \
+  --data georef_check/data/processed/features.csv \
   --model xgboost \
-  --output data/models/classifier.pkl
+  --output georef_check/data/models/classifier.pkl
 ```
 
 ### Check Georeferencing
 
 ```bash
 # Threshold mode (no model)
-python main.py check \
-  --input data/raw/dataset_custom \
+python georef_check/main.py check \
+  --input georef_check/data/raw/dataset_manual \
   --threshold 0.10
 
 # Classifier mode
-python main.py check \
-  --input data/raw/dataset_custom \
-  --model data/models/classifier.pkl
+python georef_check/main.py check \
+  --input georef_check/data/raw/dataset_manual \
+  --model georef_check/data/models/classifier.pkl
 ```
 
 ### Dry Run
